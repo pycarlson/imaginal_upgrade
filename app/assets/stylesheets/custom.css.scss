@@ -1,0 +1,67 @@
+@import "bootstrap";
+
+#submit-vid-form > .modal-backdrop .fade .in {
+  background-color: black;
+}
+
+/* universal */
+
+html {
+  padding: 0;
+  overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  background-color: #161416;
+  font-family: 'Roboto', sans-serif;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* typography */
+
+h1, h3, h4, h6 {
+  line-height: 1.5;
+}
+
+h1 {
+  color: #C6E7ED;
+  font-size: 22px;
+  font-weight: 300px;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  letter-spacing: .09em;
+  margin-right: 0;
+}
+
+h2 {
+  color: #c6e7ed;
+  font-weight: 300px;
+  font-size: 20px;
+  letter-spacing: .09em;
+}
+
+h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: .09em;
+}
+
+li {
+  list-style: none;
+  display: inline;
+}
+
+p {
+    color: white;
+}

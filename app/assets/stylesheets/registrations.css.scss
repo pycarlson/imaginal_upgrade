@@ -1,0 +1,50 @@
+.sign-in div:last-child {
+  margin-top: 30px;
+}
+
+.sign-up, .sign-in, .new-profile {
+  font-family: 'Roboto', sans-serif;
+  width: 414px;
+  min-height: 300px;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 70px;
+  padding: 40px;
+  padding-bottom: 60px;
+
+  #user_remember_me {
+    margin-bottom: 10px;
+  }
+
+  #user_remember_me {
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    color: #161416;
+    font-weight: 400;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    letter-spacing: 60;
+  }
+
+  label {
+    margin: 0;
+    margin-bottom: -10px;
+    color: #161416;
+  }
+
+  input {
+    border-radius: 0;
+    background-color: gainsboro;
+    border: none;
+    margin-bottom: 20px;
+  } 
+}
+
+textarea #profile_blurb {
+  background-color: gainsboro;
+  margin-bottom: 30px;
+}
+

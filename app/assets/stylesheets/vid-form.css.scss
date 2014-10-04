@@ -1,0 +1,43 @@
+#submit-vid-form > .modal-backdrop .fade .in {
+    background-color: black;
+    opacity: .1;
+  }
+
+#submit-vid-form, .edit-vid-form {
+
+  h1 {
+    color: #161416;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  h2 {
+    color: #161416;
+    font-weight: 400;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  h5 {
+    color: gray;
+    font-weight: 300;
+    font-size: 12px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    letter-spacing: 0;
+  }
+
+ input {
+  border-radius: 0;
+  background-color: gainsboro;
+  border: none;
+ }
+ 
+ textarea {
+    border-radius: 0;
+    background-color: gainsboro;
+    border: none;
+  }
+}

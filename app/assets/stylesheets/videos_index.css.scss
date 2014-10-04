@@ -1,0 +1,63 @@
+.search-form-container {
+  height: 140px;
+  margin: 0 auto;
+  width: 900px;
+  padding-top: 30px;
+  padding-bottom: 60px;
+
+  h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: left;
+  font-weight: 300;
+  color: #c6e7ed;
+  letter-spacing: .09em;
+  }
+}
+
+.add-vids-container {
+  clear: both;
+  width: 950px;
+  margin: 0 auto;
+  margin-left: -20px;
+  padding-bottom: 60px;
+
+  div.index-caption {
+    height: 51px;
+    margin-right: 0;
+    margin: 0;
+    margin-left: 18px;
+    top: -100px;
+    width: 190px;
+    position: relative;
+    z-index: 1;
+    background: rgba(22, 20, 22, .7);
+    padding: 5px 10px 10px 10px;
+
+    a {
+      color: #FFF;
+      font-weight: 400;
+      font-size: 14px;
+      text-decoration: none;
+    }
+  }
+
+  li {
+    display: inline-block;
+    height: 150px;
+  }
+
+  li div.images {
+    margin: 18px;
+    width: 210px;
+    height: 160px;
+    margin-right: 0;
+    padding-top: 15px;
+  }
+
+  ul {
+    width: 950px;
+    margin-left: 0;
+    padding-right: 40px;
+  }
+}

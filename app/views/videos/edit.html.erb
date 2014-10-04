@@ -1,0 +1,18 @@
+<div class="edit-vid-form">
+    <h1>VIDEO EDITING FORM</h1>
+  <%= form_for @video do |f| %>
+    <h2>TITLE</h2>
+    <h5>Give the video a snazzy title that makes people curious, e.g. "How to Start a Movement in 3 Minutes"</h5>
+    <%= f.text_field :title, :style => "width:517px;height:30px", required: :true, :autofocus => true, remote: true %>
+    <h2>URL</h2><h5>(Vimeo or YouTube)</h5>
+    <%= f.text_field :url, :style => "width:517px;height:30px", placeholder: 'http://', required: :true %>
+    <h2>DESCRIPTION</h2>
+    <h5>Tell us how this video impacted you and why it matters.</h5>
+    
+    <%= f.text_area :description, :style => "width:517px;", :rows => 3, required: :true %><br>
+    <%= f.submit "Update" %>
+  <% end %>
+</div>
+
+
+

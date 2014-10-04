@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="inner-container">  
+    <h1><%= @show_video.title %></h1>
+
+    <div class="vid-link"><%= @show_video.link.html_safe %></div>
+    
+    <div class="add-stars-box">
+      <% if flash[:alert] %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+          
+      <div id="star-brand"><h2>Vote. Share. Change the World.</h2></div>
+
+          <div class="left-stars-box">
+            <div class="cat">
+              <div tooltip="We value attention to detail, and care for final the product. We honor the work that has been carefully and lovingly produced. We celebrate those who demonstrate this kind of care and commitment to quality." class="tooltip1" ><h5><%= @categories[0].name %></h5></div>
+              <%= render "production_quality_ratings" %>
+            </div>
+            
+            <div class="cat">
+              <div tooltip="We celebrate those who step beyond the vulnerabilities of being exposed, and expressing their unique gifts to the world. We honor who inspire us to radically express our own selves." class="tooltip2"><h5><%= @categories[1].name %></h5></div>
+              <%= render "radical_creativity_ratings" %>
+            </div>
+            
+
+            <div class="cat">
+              <div tooltip="We value creative cooperation and collaboration. We celebrate those who demonstrate to us the power of coming together. We honor the work that requires communal effort to produce." class="tooltip3"><h5><%= @categories[2].name %></h5></div>
+              <%= render "communal_effort_ratings" %>
+            </div>
+          </div>
+
+          <div class="right-stars-box">
+            <div class="cat">
+              <div tooltip="No matter what, we welcome the stranger. There is no contrast or quality by which we choose to exclude others. We enter into a global family that transcends any identifier, and we celebrate the media and heroes that demonstrate that quality." class="tooltip4"><h5><%= @categories[3].name %></h5></div>
+              <%= render "radical_inclusivity_ratings" %>
+            </div>
+
+            <div class="cat">
+              <div tooltip="We value civil society. We celebrate those who that demonstrate the individual or collective capacity to benefit our community. Whether local, regional, national, and international community we honor the ethic of responsibility to others." class="tooltip5"><h5><%= @categories[4].name %></h5></div>
+              <%= render "civic_responsibility_ratings" %>
+            </div>
+
+            <div class="cat">
+              <div tooltip="We seek to overcome barriers that stand between us and a recognition of our inner selves, the reality of those around us, participation in society, and contact with a natural world exceeding human powers. We celebrate those who take us beyond those barriers." class="tooltip6"><h5><%= @categories[5].name %></h5></div>
+              <%= render "immediacy_ratings" %>
+            </div>
+          </div>
+        </div>
+        <div class="share">
+          <a>
+             <div class="full-share" id="fb-image"><%=link_to image_tag('../assets/Facebook_share_button.png') %></div>
+           </a>
+          <script type="text/javascript">
+            $(document).ready(function(){
+              $('.full-share').click(function(e){
+                e.preventDefault();
+                FB.ui(
+                {
+                  method: 'feed',
+                  name: '<%= @show_video.title %>',
+                  link: 'http://imaginal.herokuapp.com/videos/<%= @show_video.id %>',
+                  picture: '<%= @show_video.facebook_thumbnail_link %>',
+                  description: '<%= @show_video.description %>',
+                  message: ''
+                });
+              });
+            });
+          </script>
+        </div>
+        <div class="description"><%= @show_video.description %></div>
+      </div>
+      <div id="alert"></div>
+      <div id="facebook-popup">
+      <%= link_to image_tag("../assets/x-mark.jpg") %>
+       <div class="fb-like-box" data-href="https://www.facebook.com/imaginal.us" data-width="200" data-height="220" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+    </div>
+    </div>
+
+
+
+  <%= render 'form' %>
+
+  <footer class="footer">
+
+  <%= render 'show_page_carousel' %>  
+
+  </footer>
+

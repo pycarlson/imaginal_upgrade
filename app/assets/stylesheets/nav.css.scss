@@ -1,0 +1,85 @@
+.navbar {
+  width: 100%;
+  top: 0;
+  background-image: url(/assets/header.png);
+  margin: 0;
+  height: 60px;
+  width: 100%;
+  padding: 0;
+
+  .inner-nav {
+    width: 900px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    float: left;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .to-sub-vid-modal a {
+    width: 145px;
+    height: 48px;
+    background: url('../assets/button-submit.png') no-repeat;
+    z-index: 1;
+    float: right;
+    margin-left: 30px;
+    margin-top: 6px;
+
+    &:hover {
+      background-position: 0 -48px;
+    }
+  }
+
+  .get-signed-in a {
+    width: 145px;
+    height: 48px;
+    background: url('../assets/button-submit.png') no-repeat;
+    z-index: 1;
+    float: right;
+    margin-left: 30px;
+    margin-top: 6px;
+
+    &:hover {
+      background-position: 0 -48px;
+    }
+  }
+
+  .nav-right {
+    float: right;
+    margin-top: 20px;
+
+    a {
+      color: #C7B8D9;
+      margin-left: 30px;
+      padding-top: 30px;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: .1em;
+      font-weight: 300;
+
+      &:hover {
+        color: #00FFCC;
+      }
+    }
+  }
+
+  .nav-left {
+    float: left;
+
+    li {
+      display: inline;
+      list-style: none;
+    }
+  }
+}
+
+#nav-border {
+  height: 1px;
+  width: 100%;
+  background-image: url(/assets/keystroke-rainbow.png);
+}

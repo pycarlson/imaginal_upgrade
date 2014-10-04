@@ -1,0 +1,92 @@
+div.stars {
+  font-size: 0;
+  position: relative;
+  display: table-cell;
+  width: 50%;
+  height: 22px;
+  font-size: 0;
+
+  .starbox {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 22px;
+  }
+
+  ul {
+    background: #2f2b31;
+    position: absolute;
+    top:0; left:0; height:22px;
+    margin:0; 
+
+    li {
+      display: inline;
+      padding: 0; margin: 0;
+      padding-bottom: 0px;
+    }
+  }
+
+  .colorBoxAverage {
+    position: absolute;
+    z-index: 2;
+    top:0; left:0; bottom:0; height:100%;
+    transition: width 0.05s;
+    padding-bottom: 0px;
+  }
+
+  .colorBoxInteraction {
+    position: absolute;
+    z-index: 3;
+    top: 0; left: 0; height: 100%;
+    padding-bottom: 0px;
+    transition: width 0.05s;
+  }
+
+  img {
+    position: relative;
+    z-index: 4;
+    display: inline-block;
+    width: 24px; height:24px;
+    text-indent: -4000em;
+    padding-bottom: 0px;
+  }
+}
+
+.notice {
+  margin: 0;  
+}
+
+.add-stars-box {
+  margin-top: 20px;
+  margin-top: 20px;
+
+  h5 {
+    font-size: 17px;
+    font-weight: 300;
+    color: #bcb8cc;
+    width: 178px;
+    letter-spacing: 0.09em;
+    text-align: right;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  div.left-stars-box {
+    width: 310px;
+    height: 90px;
+    float: left;
+  }
+
+  div.right-stars-box {
+    width: 330px;
+    height: 90px;
+    float: left;
+  }
+  
+  .cat {
+    margin-bottom: 10px;
+    width:100%;
+    display: table;
+  }
+}
+

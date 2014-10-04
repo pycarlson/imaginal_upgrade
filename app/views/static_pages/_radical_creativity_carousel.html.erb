@@ -1,0 +1,209 @@
+<div class="row-fluid">
+  <div class="carousel slide" id="radical_creativity">
+    <h2>Radical Creativity<span>TOP 20</span></h2><br>
+    <div class="carousel-inner">
+      <div class="item active">
+        <ul class="thumbnails">
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[0].nil? %>
+              <% vid = Video.find(@radical_creativity[0].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[1].nil? %>
+              <% vid = Video.find(@radical_creativity[1].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[2].nil? %>
+              <% vid = Video.find(@radical_creativity[2].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">        
+              <% unless @radical_creativity[3].nil? %>
+              <% vid = Video.find(@radical_creativity[3].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        <ul class="thumbnails">
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[4].nil? %>
+              <% vid = Video.find(@radical_creativity[4].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[5].nil? %>
+              <% vid = Video.find(@radical_creativity[5].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[6].nil? %>
+              <% vid = Video.find(@radical_creativity[6].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[7].nil? %>
+              <% vid = Video.find(@radical_creativity[7].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        <ul class="thumbnails">
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[8].nil? %>
+              <% vid = Video.find(@radical_creativity[8].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[9].nil? %>
+              <% vid = Video.find(@radical_creativity[9].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[10].nil? %>
+              <% vid = Video.find(@radical_creativity[10].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[11].nil? %>
+              <% vid = Video.find(@radical_creativity[11].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        <ul class="thumbnails">
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[12].nil? %>
+              <% vid = Video.find(@radical_creativity[12].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[13].nil? %>
+              <% vid = Video.find(@radical_creativity[13].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[14].nil? %>
+              <% vid = Video.find(@radical_creativity[14].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[15].nil? %>
+              <% vid = Video.find(@radical_creativity[15].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        <ul class="thumbnails">
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[16].nil? %>
+              <% vid = Video.find(@radical_creativity[16].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[17].nil? %>
+              <% vid = Video.find(@radical_creativity[17].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[18].nil? %>
+              <% vid = Video.find(@radical_creativity[18].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @radical_creativity[19].nil? %>
+              <% vid = Video.find(@radical_creativity[19].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <a data-slide="prev" href="#radical_creativity" class="left carousel-control"><img src="../assets/left-arrow.png"></a>
+    <a data-slide="next" href="#radical_creativity" class="right carousel-control"><img src="../assets/right-arrow.png"></a>
+  </div>
+</div>

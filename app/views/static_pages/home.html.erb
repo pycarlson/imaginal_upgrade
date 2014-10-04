@@ -1,0 +1,26 @@
+<div class="container">
+
+  <div class="feature-home-container">
+    <% if flash[:alert] %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+
+    <h2><%= @feature.title %></h2>
+
+    <div class="vid-link"><%= @feature.link.html_safe %></div>
+  </div>
+
+
+<%= render 'videos/form' %>
+
+<footer class="footer">
+
+<%= render 'production_quality_carousel' %>
+<%= render 'radical_creativity_carousel' %>
+<%= render 'communal_effort_carousel' %>
+<%= render 'radical_inclusivity_carousel' %>
+<%= render 'civic_responsibility_carousel' %>
+<%= render 'immediacy_carousel' %>
+
+</footer>
+</div>

@@ -1,0 +1,209 @@
+<div class="row-fluid">
+  <div class="carousel slide" id="communal_effort_carousel">
+    <h2>Communal Effort<span>TOP 20</span></h2><br>
+    <div class="carousel-inner">
+       <div class="item active">
+        <ul class="thumbnails">
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[0].nil? %>
+              <% vid = Video.find(@communal_effort[0].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[1].nil? %>
+              <% vid = Video.find(@communal_effort[1].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[2].nil? %>
+              <% vid = Video.find(@communal_effort[2].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">        
+              <% unless @communal_effort[3].nil? %>
+              <% vid = Video.find(@communal_effort[3].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        <ul class="thumbnails">
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[4].nil? %>
+              <% vid = Video.find(@communal_effort[4].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[5].nil? %>
+              <% vid = Video.find(@communal_effort[5].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[6].nil? %>
+              <% vid = Video.find(@communal_effort[6].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[7].nil? %>
+              <% vid = Video.find(@communal_effort[7].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        <ul class="thumbnails">
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[8].nil? %>
+              <% vid = Video.find(@communal_effort[8].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[9].nil? %>
+              <% vid = Video.find(@communal_effort[9].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[10].nil? %>
+              <% vid = Video.find(@communal_effort[10].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[11].nil? %>
+              <% vid = Video.find(@communal_effort[11].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        <ul class="thumbnails">
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[12].nil? %>
+              <% vid = Video.find(@communal_effort[12].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[13].nil? %>
+              <% vid = Video.find(@communal_effort[13].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[14].nil? %>
+              <% vid = Video.find(@communal_effort[14].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[15].nil? %>
+              <% vid = Video.find(@communal_effort[15].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        <ul class="thumbnails">
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[16].nil? %>
+              <% vid = Video.find(@communal_effort[16].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[17].nil? %>
+              <% vid = Video.find(@communal_effort[17].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[18].nil? %>
+              <% vid = Video.find(@communal_effort[18].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+          <li class="span3">
+            <div class="thumbnail">
+              <% unless @communal_effort[19].nil? %>
+              <% vid = Video.find(@communal_effort[19].video_id) %>
+              <%= link_to image_tag(vid.thumbnail_link), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(vid.title, length: 50)), video_path(vid) %></div>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <a data-slide="prev" href="#communal_effort_carousel" class="left carousel-control"><img src="../assets/left-arrow.png"></a>
+    <a data-slide="next" href="#communal_effort_carousel" class="right carousel-control"><img src="../assets/right-arrow.png"></a>
+  </div>
+</div>
