@@ -34,7 +34,7 @@ class VideosController < ApplicationController
   end
 
   def create
-    @video = Video.new params[:video]
+    @video = Video.create(video_params)
     @video.user = current_user
     if @video.save
       redirect_to @video
@@ -48,7 +48,7 @@ class VideosController < ApplicationController
   end
 
   def update
-    if @video.update_attributes(params[:video])
+    if @video.update_attributes(video_params)
       redirect_to video_path(@video)
     else
       render :edit
@@ -63,7 +63,7 @@ class VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:rating).permit(:link, :title, :url, :link, :description, :feature)
+    params.require(:video).permit(:link, :title, :url, :description, :feature)
   end
 
   def update_click_count

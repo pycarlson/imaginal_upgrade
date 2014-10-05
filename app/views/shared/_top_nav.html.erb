@@ -8,7 +8,7 @@
         <li class="nav-right"><%= link_to "ALL VIDEOS", videos_path %></li>
         <li class="nav-right"><%= link_to "MY VIDEOS", profile_path(current_user.profile.id) %></li>
       <% else %>
-      <li class="get-signed-in"><a href="<%= new_user_session_path %>"></a></li>
+        <li class="get-signed-in"><a href="<%= new_user_session_path %>"></a></li>
         <li class="nav-right"><%= link_to "SIGN UP", new_user_registration_path %></li>
         <li class="nav-right"><%= link_to "LOG IN", new_user_session_path %></li>
         <li class="nav-right"><%= link_to "ALL VIDEOS", videos_path %></li>

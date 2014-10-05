@@ -24,7 +24,7 @@
         <% @vids.each do |video| %>
           <tr>
             <td><%= link_to video.title, video %></td>
-            <td class="edit"><%= link_to "edit", edit_video_path(video) %></td>
+            <td class="edit profile-vid-edit"><a href="<%= edit_video_path(video) %>">edit</a></td>
             <td class="delete"><%= link_to "delete", video_path(video), :method => :delete %></td>
             
             <td><%= number_with_precision(video.overall_rating, :precision => 2) %></td>

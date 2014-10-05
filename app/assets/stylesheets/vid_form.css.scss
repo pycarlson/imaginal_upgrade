@@ -5,6 +5,14 @@
 
 #submit-vid-form, .edit-vid-form {
 
+  .modal-content {
+    width: 565px;
+  }
+
+  .modal-dialog {
+    margin: 100px auto;
+  }
+
   h1 {
     color: #161416;
     font-weight: 400;
@@ -16,8 +24,7 @@
     color: #161416;
     font-weight: 400;
     font-size: 18px;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 20px;
   }
 
   h5 {
