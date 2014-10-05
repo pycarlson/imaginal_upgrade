@@ -1,10 +1,8 @@
-.row-fluid {
-  margin-bottom: 20px;
-}
+@import "./_variables";
 
 .carousel {
-  width: 900px;
-  background-color: #1b191c;
+  width: $main;
+  background-color: $backBody;
 
   .carousel-control {
     border: none;
@@ -24,7 +22,7 @@
     border: none;
     height: 130px;
     width: 210px;
-    background-color: #1b191c;
+    background-color: $backBody;
   }
 
   h2 {
@@ -34,19 +32,19 @@
   span {
     font-size: 12px;
     padding-left: 10px;
-    color: #C7B8D9;
+    color: $paleMauve;
     font-weight: 400;
   }
 }
 
 .carousel-inner {
-  background-color: #1b191c;
+  background-color: $backBody;
 }
 
 ul.thumbnails {
   width: 970px;
   margin: 0 auto;
-  background-color: #1b191c;
+  background-color: $backBody;
   padding: 0;
 
   li {
@@ -55,9 +53,9 @@ ul.thumbnails {
 }
 
 .carousel.slide {
-  width: 900px;
+  width: $main;
   margin: 0 auto;
-  background-color: #1b191c;
+  background-color: $backBody;
 
   li {
     margin: 0px;
@@ -78,7 +76,7 @@ ul.thumbnails {
   padding: 5px 10px 10px 10px;
 
   a {
-    color: #FFF;
+    color: $white;
     font-weight: 400;
     font-size: 14px;
     text-decoration: none;

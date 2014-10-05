@@ -1,7 +1,21 @@
+@import "./_variables";
+
+.carousel-footer {
+  width: $main;
+  margin: 0 auto;
+  min-height: 200px;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  border-top: 1px solid #2f2b31;
+  color: #999;
+  clear: both;
+  background-color: $backBody;
+}
+
 .search-form-container {
   height: 140px;
   margin: 0 auto;
-  width: 900px;
+  width: $main;
   padding-top: 30px;
   padding-bottom: 60px;
 
@@ -10,19 +24,17 @@
   margin-bottom: 20px;
   text-align: left;
   font-weight: 300;
-  color: #c6e7ed;
+  color: $paleBlue;
   letter-spacing: .09em;
   }
 }
 
 .add-vids-container {
   clear: both;
-  width: 900px;
+  width: $main;
   margin: 0 auto;
   margin-left: -20px;
   padding-bottom: 60px;
-
-
 
   div.index-caption {
     height: 51px;
@@ -37,7 +49,7 @@
     padding: 5px 10px 10px 10px;
 
     a {
-      color: #FFF;
+      color: $white;
       font-weight: 400;
       font-size: 14px;
       text-decoration: none;
@@ -60,7 +72,7 @@
   }
 
   ul {
-    width: 900px;
+    width: $main;
     margin-left: 0;
   }
 }

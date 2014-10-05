@@ -1,3 +1,5 @@
+@import "./_variables";
+
 .sign-in div:last-child {
   margin-top: 30px;
 }
@@ -6,14 +8,16 @@
   font-family: 'Roboto', sans-serif;
   width: 414px;
   min-height: 300px;
-  background-color: white;
+  background-color: $white;
   margin: 0 auto;
   margin-top: 70px;
   padding: 40px;
   padding-bottom: 60px;
+
   #user_remember_me {
     margin-bottom: 10px;
   }
+
   h2 {
     color: #161416;
     font-weight: 400;
@@ -22,10 +26,12 @@
     margin-bottom: 20px;
     letter-spacing: 60;
   }
+
   label {
     margin: 0;
     margin-bottom: -10px;
   }
+  
   input {
     border-radius: 0;
     background-color: gainsboro;

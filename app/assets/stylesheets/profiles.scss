@@ -1,9 +1,11 @@
+@import "./_variables";
+
 .profiles {
   margin-top: 40px;
   margin-bottom: 40px;
 
   ul {
-    color: #c6e7ed;
+    color: $paleBlue;
     margin-left: 0;
 
     li {
@@ -20,13 +22,13 @@
 
   table {
   font-size: 16px;
-  color: #c6e7ed;
+  color: $paleBlue;
   font-weight: 300;
   text-align: left;
 
     td {
       width: 100px;
-      color: #F2F2F2;
+      color: $offWhite;
       text-align: left;
 
       &:first-child {
@@ -49,7 +51,7 @@
     }
 
     a {
-      color: #F2F2F2;
+      color: $offWhite;
       font-size: 16px;
       font-weight: 300;
       text-decoration: none;

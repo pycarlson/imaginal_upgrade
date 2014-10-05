@@ -1,3 +1,5 @@
+@import "./_variables";
+
 #submit-vid-form > .modal-backdrop .fade .in {
     background-color: black;
     opacity: .1;
@@ -7,6 +9,7 @@
 
   .modal-content {
     width: 565px;
+    border-radius: 0;
   }
 
   .modal-dialog {
@@ -14,14 +17,14 @@
   }
 
   h1 {
-    color: #161416;
+    color: $backBody;
     font-weight: 400;
     font-size: 24px;
     text-align: center;
   }
 
   h2 {
-    color: #161416;
+    color: $backBody;
     font-weight: 400;
     font-size: 18px;
     margin-top: 20px;
@@ -46,5 +49,27 @@
     border-radius: 0;
     background-color: gainsboro;
     border: none;
+  }
+}
+
+.edit-vid-form {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 565px; 
+  padding: 20px;
+  background-color: $white;
+  padding-top: none;
+
+  label {
+    margin: 0;
+    margin-bottom: -10px;
+  }
+
+  input {
+    margin-bottom: 20px;
+  } 
+
+  .modal-footer {
+    margin-top: 45px;
   }
 }
