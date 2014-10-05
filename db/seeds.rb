@@ -8,7 +8,7 @@ user.videos << Video.create(title: "Spirit of Meditation", description: "This is
 user.videos << Video.create(title: "Spirits", description: "This is just another film to test out what things look like at this point.", url: "http://www.youtube.com/watch?v=_JgHVlcaQJ0" )
 user.videos << Video.create(title: "Music to Relax Your Mind To", description: "This is just another film to test out what things look like at this point.", url: "http://www.youtube.com/watch?v=Tj8p9DofvZA" )
 user.videos << Video.create(title: "Meditation Music", description: "This is just another film to test out what things look like at this point.", url: "http://www.youtube.com/watch?v=rljDFfufSCo" )
-user.videos << Video.create(title: "Zen Garden", description: "This is just another film to test out what things look like at this point.", url: "http://www.youtube.com/watch?v=i2SSPIzMvDY" )
+user.videos << Video.create(title: "Seconds of Beauty", description: "This is just another film to test out what things look like at this point.", url: "https://vimeo.com/32071937" )
 user.videos << Video.create(title: "Calm Music", description: "This is just another film to test out what things look like at this point.", url: "http://www.youtube.com/watch?v=TZMoS2QBc8U" )
 user.videos << Video.create(title: "Sound Therapy", description: "This is just another film to test out what things look like at this point.", url: "http://www.youtube.com/watch?v=R_K_mMhZrPs" )
 user.videos << Video.create(title: "Are You an Imaginal?", description: "They start to create new organizations, to create something more fabulous than the previous system. A system that is much more sustainable.  A system with a higher level of evolution.", url: "http://www.youtube.com/watch?v=7DLokOQZlag", :feature => true )
