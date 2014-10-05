@@ -1,9 +1,9 @@
 <div class="navbar">
   <div class="inner-nav">
     <ul>
-      <li class="nav-left logo"><%= link_to image_tag("../assets/logo.png"), root_path %></li>
+      <li class="nav-left logo"><%= link_to image_tag("logo.png"), root_path %></li>
       <% if user_signed_in? %>
-        <li class="to-sub-vid-modal" ><%= link_to image_tag("../assets/empty.png"), new_video_path %></li>
+        <li class="to-sub-vid-modal" ><%= link_to image_tag("empty.png"), new_video_path %></li>
         <li class="nav-right"><%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %></li>
         <li class="nav-right"><%= link_to "ALL VIDEOS", videos_path %></li>
         <li class="nav-right"><%= link_to "MY VIDEOS", profile_path(current_user.profile.id) %></li>
