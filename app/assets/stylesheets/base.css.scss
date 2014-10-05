@@ -37,6 +37,8 @@
   h1 {
     font-weight: 300;
     letter-spacing: .09em;
+    font-size: 20px;
+    color: #F2F2F2;
   }
 
   h2 {
@@ -50,17 +52,11 @@
   }
 }
 
+.main-video {
+  height: 750px;
+}
+
 .vid-link {
   margin-bottom: -10px;
 }
-
-.form-holder {
-  width: 900px;
-  margin: 0 auto;
-
-  input {
-    width: 400px !important;
-  }
-}
-
 

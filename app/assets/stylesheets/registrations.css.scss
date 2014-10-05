@@ -11,15 +11,9 @@
   margin-top: 70px;
   padding: 40px;
   padding-bottom: 60px;
-
   #user_remember_me {
     margin-bottom: 10px;
   }
-
-  #user_remember_me {
-    margin-bottom: 10px;
-  }
-
   h2 {
     color: #161416;
     font-weight: 400;
@@ -28,22 +22,19 @@
     margin-bottom: 20px;
     letter-spacing: 60;
   }
-
   label {
     margin: 0;
     margin-bottom: -10px;
-    color: #161416;
   }
-
   input {
     border-radius: 0;
     background-color: gainsboro;
     border: none;
     margin-bottom: 20px;
-  } 
+   } 
 }
 
-textarea #profile_blurb {
+textarea#profile_blurb {
   background-color: gainsboro;
   margin-bottom: 30px;
 }

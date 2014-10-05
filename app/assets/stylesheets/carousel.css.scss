@@ -3,21 +3,21 @@
 }
 
 .carousel {
-  width: 1000px;
+  width: 900px;
   background-color: #1b191c;
 
-  .carousel-control.right {
-    top: 53%;
-    right: -37px;
+  .carousel-control {
     border: none;
-    background-color: #1b191c;
-  }
+    background-color: transparent;
+    top: 105px;
 
-  .carousel-control.left {
-    top: 53%;
-    left: -40px;
-    border: none;
-    background-color: #1b191c;
+    &.right {
+      right: -85px;
+    }
+
+    &.left {
+      left: -85px;
+    }
   }
 
   div.thumbnail {
@@ -47,6 +47,11 @@ ul.thumbnails {
   width: 970px;
   margin: 0 auto;
   background-color: #1b191c;
+  padding: 0;
+
+  li {
+    width: 227px;
+  }
 }
 
 .carousel.slide {
@@ -66,7 +71,7 @@ ul.thumbnails {
   margin: 0;
   margin-left: 4px;
   top: -60px;
-  width: 190px;
+  width: 202px;
   position: relative;
   z-index: 1;
   background: rgba(22, 20, 22, .7);

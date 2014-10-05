@@ -1,5 +1,3 @@
-@import "bootstrap";
-
 #submit-vid-form > .modal-backdrop .fade .in {
   background-color: black;
 }
@@ -15,7 +13,7 @@ html {
 }
 
 body {
-  background-color: #161416;
+  background-color: #161416 !important;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -64,4 +62,8 @@ li {
 
 p {
     color: white;
+}
+
+ul {
+  padding: 0;
 }

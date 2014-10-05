@@ -3,9 +3,8 @@
 }
 
 #fb-image img {
-  float: left;
+  float: right;
   position: relative;
-  z-index: -1;
   margin-top: -40px;
   width: 260px;
   float: left;
@@ -16,8 +15,7 @@
 .description {
   width: 260px;
   height: 80px;
-  float: left;
-  z-index: -1;
+  float: right;
   position: relative;
   font-size: 14px;
   font-weight: 300;
