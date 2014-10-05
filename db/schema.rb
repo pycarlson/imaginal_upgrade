@@ -11,15 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004043631) do
+ActiveRecord::Schema.define(version: 20130910234102) do
 
   create_table "averages", force: true do |t|
     t.integer  "video_id"
     t.integer  "category_id"
     t.integer  "total_stars",   default: 0
-    t.integer  "integer",       default: 0
     t.float    "total_ratings", default: 0.0
-    t.float    "float",         default: 0.0
     t.float    "average",       default: 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -54,11 +52,12 @@ ActiveRecord::Schema.define(version: 20141004043631) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "full_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -68,19 +67,19 @@ ActiveRecord::Schema.define(version: 20141004043631) do
 
   create_table "videos", force: true do |t|
     t.integer  "user_id"
-    t.float    "overall_rating",          default: 0.0
-    t.float    "overall_stars",           default: 0.0
-    t.integer  "overall_votes",           default: 0
-    t.string   "facebook_thumbnail_link"
     t.string   "title"
     t.text     "description"
     t.string   "url"
     t.string   "link"
     t.string   "thumbnail_link"
-    t.integer  "click_count",             default: 0
     t.boolean  "feature",                 default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "overall_rating",          default: 0.0
+    t.float    "overall_stars",           default: 0.0
+    t.integer  "overall_votes",           default: 0
+    t.integer  "click_count",             default: 0
+    t.string   "facebook_thumbnail_link"
   end
 
 end

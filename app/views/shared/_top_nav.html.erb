@@ -6,7 +6,7 @@
         <li class="to-sub-vid-modal" ><%= link_to image_tag("../assets/empty.png"), new_video_path %></li>
         <li class="nav-right"><%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %></li>
         <li class="nav-right"><%= link_to "ALL VIDEOS", videos_path %></li>
-        <li class="nav-right"><%= link_to "MY VIDEOS", profile_path(Profile.find(1).id) %></li>
+        <li class="nav-right"><%= link_to "MY VIDEOS", profile_path(current_user.profile.id) %></li>
       <% else %>
         <li class="get-signed-in"><%= link_to image_tag("../assets/empty.png"), new_user_session_path %></li>
         <li class="nav-right"><%= link_to "SIGN UP", new_user_registration_path %></li>
@@ -14,7 +14,6 @@
         <li class="nav-right"><%= link_to "ALL VIDEOS", videos_path %></li>
       <% end %>
     </ul>
-    <div class="clearfix"></div>
  </div>
 </div>  
 
