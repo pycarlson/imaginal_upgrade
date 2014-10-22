@@ -1,5 +1,5 @@
 ImaginalUpgrade::Application.routes.draw do
-  
+
   devise_for :users
   root :to => "static_pages#home"
   
@@ -10,6 +10,6 @@ ImaginalUpgrade::Application.routes.draw do
   get '/about' => 'static_pages#about', :as => :about
   # get '/ratings/add_rating' => 'ratings#add_rating', :as => :add_rating
 
-  match '/add_rating' => 'ratings#add_rating', via: 'get'
+  match '/add_rating' => 'ratings#add_rating', via: 'post'
 
 end
