@@ -78,6 +78,17 @@
       list-style: none;
     }
   }
+
+  .thumb {
+    position: relative;
+    top: -3px;
+
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
 }
 
 #nav-border {

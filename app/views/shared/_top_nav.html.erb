@@ -4,22 +4,17 @@
       <li class="nav-left logo"><%= link_to image_tag("logo.png"), root_path %></li>
       <% if user_signed_in? %>
         <li class="to-sub-vid-modal"><a href="<%= new_video_path %>"></a></li>
+        <li class="nav-right thumb"><a href="http://facebook.com/<%=current_user.uid %>"><img alt="Signed in as <%=current_user.name %>" title="Signed in as <%=current_user.name %>" src="https://graph.facebook.com/<%= current_user.uid %>/picture?type=square" /></a></li>
         <li class="nav-right"><%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %></li>
-        <li class="nav-right"><%= link_to "ALL VIDEOS", videos_path %></li>
         <li class="nav-right"><%= link_to "MY VIDEOS", profile_path(current_user.profile.id) %></li>
+        <li class="nav-right"><%= link_to "ALL VIDEOS", videos_path %></li>
       <% else %>
-        <li class="get-signed-in"><a href="<%= new_user_session_path %>"></a></li>
-        <li class="nav-right"><%= link_to "SIGN UP", new_user_registration_path %></li>
-        <li class="nav-right"><%= link_to "LOG IN", new_user_session_path %></li>
+        <li class="get-signed-in"><a href="<%= user_omniauth_authorize_path(:facebook) %>"></a></li>
+        <li class="nav-right"><%= link_to "SIGN IN WITH FACEBOOK", user_omniauth_authorize_path(:facebook) %></li>
         <li class="nav-right"><%= link_to "ALL VIDEOS", videos_path %></li>
       <% end %>
     </ul>
  </div>
-</div>  
-
-
-
-
-
+</div>
 
 

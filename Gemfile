@@ -23,6 +23,9 @@ gem 'responders', '~> 1.0.0.rc'
 gem 'inherited_resources', '~> 1.4.1'
 gem 'activeadmin', github: 'activeadmin'
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 group :development do
   gem 'sqlite3'
   gem 'quiet_assets'
