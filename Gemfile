@@ -18,7 +18,10 @@ gem 'activerecord-tableless', '~> 1.0'
 gem 'google_drive'
 gem 'figaro'
 gem 'rake', '~> 10.3.1'
-gem 'will_paginate', '~> 3.0.5'
+gem 'kaminari'
+gem 'responders', '~> 1.0.0.rc'
+gem 'inherited_resources', '~> 1.4.1'
+gem 'activeadmin', github: 'activeadmin'
 
 group :development do
   gem 'sqlite3'

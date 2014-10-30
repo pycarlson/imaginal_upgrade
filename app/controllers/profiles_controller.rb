@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
     #@user = User.find(1)
     @video = Video.new
     #@categories = Category.all
-    @videos = current_user.videos.paginate(:page => params[:page], :per_page => 20).order('id DESC')
+    @videos = current_user.videos.order('id DESC').page params[:page]
     #@rating = Rating.new
   end
 
