@@ -1,0 +1,35 @@
+<div class="add-vids-container">
+  <% if @videos.count != 0  %>
+
+    <ul>
+      <% @videos.each do |video| %>
+        <li>
+          <div class="images">
+            <%= link_to image_tag(video.thumbnail_link), video_path(video) %>
+          </div>
+          <div class="index-caption">
+            <%= link_to (truncate(video.title, length: 50)), video_path(video) %>
+          </div>
+          <div class="average-rating">
+            <span>Imaginality: </span>
+            <ul>
+              <% 1.upto(5) do |i| %>
+                <% if i <= video.average_rating %>
+                  <li class="star active"><%= image_tag("../assets/bigger-star-from-Jeff.png")%></li>
+                <% else %>
+                  <li class="star"><%= image_tag("../assets/bigger-star-from-Jeff.png")%></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <div class="none-found"><p>No videos found</p></div>
+  <% end %>
+</div>
+
+<div class="digg_pagination">
+    <%= will_paginate @videos, :container => false %>
+</div>

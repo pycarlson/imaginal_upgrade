@@ -3,12 +3,12 @@ class ProfilesController < ApplicationController
   before_filter :authenticate
 
   def show
-    @profile = Profile.find(params[:id])
-    @user = User.find(1)
+    #@profile = Profile.find(params[:id])
+    #@user = User.find(1)
     @video = Video.new
-    @categories = Category.all
-    @vids = @user.videos.order('overall_rating DESC')
-    @rating = Rating.new
+    #@categories = Category.all
+    @videos = current_user.videos.paginate(:page => params[:page], :per_page => 20).order('id DESC')
+    #@rating = Rating.new
   end
 
 private

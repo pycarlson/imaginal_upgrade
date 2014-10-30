@@ -13,21 +13,8 @@
   </div>
   <% end %>
 
-  <div class="add-vids-container">
-    <ul>
-      <% @videos.each do |video| %>
-      <li>
-        <div class="images">
-          <%= link_to image_tag(video.thumbnail_link), video_path(video) %>
-        </div>
-        <div class="index-caption">
-          <%= link_to (truncate(video.title, length: 50)), video_path(video) %>
-        </div>
-      </li>
-      <% end %>
-    </ul>
-  </div>
-  
+  <%= render 'shared/videos' %>
+
   <%= render 'form' %>
 
 </div>

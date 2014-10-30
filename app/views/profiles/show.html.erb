@@ -1,61 +1,10 @@
-<div class="container">
-  <div class="inner-container">
-    <div class="profiles">
-      <ul>
-        <li><h3><%= @profile.full_name %><h3></li>
-      </ul>
+<div class="search-form-container">
 
-    </div>
-    <% if @vids.length == 0 %>
-      <p>You haven't uploaded any videos yet but once you do, you will have access to editing and deleting those videos from here.</p>
-    <% else %>
-      
-    <div class="user-video-titles">
-      <table>
-        <thead>
-          <tr>
-            <th><h4>Your Uploaded Videos</h4></th>
-            <th><h4>Edit</h4></th>
-            <th><h4>Delete</h4></th>
-            <th><h4>Imaginality</h4></th>
-          </tr>
-        </thead>
-        <tbody>
-        <% @vids.each do |video| %>
-          <tr>
-            <td><%= link_to video.title, video %></td>
-            <td class="edit profile-vid-edit"><a href="<%= edit_video_path(video) %>">edit</a></td>
-            <td class="delete"><%= link_to "delete", video_path(video), :method => :delete %></td>
-            
-            <td><%= number_with_precision(video.overall_rating, :precision => 2) %></td>
-          </tr>
-         <% end %>
-        </tbody>  
-      </table>  
-      <% end %>
-    </div>
+    <h2>Your Videos</h2>
 
-  </div>
+    <%= render 'shared/videos' %>
 
-  <%= render 'videos/form' %>
-</div>
-
-<div class="footer">
+    <%= render 'videos/form' %>
 
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 

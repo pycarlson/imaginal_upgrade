@@ -44,12 +44,17 @@
   background-color: gainsboro;
   border: none;
  }
- 
+
  textarea {
     border-radius: 0;
     background-color: gainsboro;
     border: none;
   }
+
+  input[type=text], input[type=email], input[type=password], textarea {
+    width: 100%;
+  }
+
 }
 
 .edit-vid-form {

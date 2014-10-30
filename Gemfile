@@ -18,6 +18,7 @@ gem 'activerecord-tableless', '~> 1.0'
 gem 'google_drive'
 gem 'figaro'
 gem 'rake', '~> 10.3.1'
+gem 'will_paginate', '~> 3.0.5'
 
 group :development do
   gem 'sqlite3'

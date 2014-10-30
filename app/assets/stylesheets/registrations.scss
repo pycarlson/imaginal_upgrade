@@ -37,7 +37,10 @@
     background-color: gainsboro;
     border: none;
     margin-bottom: 20px;
-   } 
+  }
+  input[type=text], input[type=email], input[type=password] {
+    width: 100%;
+  }
 }
 
 textarea#profile_blurb {

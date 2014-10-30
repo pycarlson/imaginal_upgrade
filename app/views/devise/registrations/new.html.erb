@@ -5,16 +5,16 @@
   <%= devise_error_messages! %>
 
   <div><%= f.label :email %><br />
-    <%= f.email_field :email, :style => "width:330px", :autofocus => true %></div>
+    <%= f.email_field :email, :style => "", :autofocus => true %></div>
 
   <div><%= f.label :full_name %><br />
-    <%= f.text_field :full_name, :style => "width:330px", :autofocus => true %></div>
+    <%= f.text_field :full_name, :style => "", :autofocus => true %></div>
 
   <div><%= f.label :password %><br />
-    <%= f.password_field :password, :style => "width:330px" %></div>
+    <%= f.password_field :password, :style => "" %></div>
 
   <div><%= f.label :password_confirmation %><br />
-     <%= f.password_field :password_confirmation, :style => "width:330px" %></div>
+     <%= f.password_field :password_confirmation, :style => "" %></div>
 
   <div><%= f.submit "Sign up" %></div>
     <% end %>

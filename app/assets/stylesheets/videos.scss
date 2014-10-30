@@ -1,5 +1,43 @@
 @import "./_variables";
 
+.none-found {
+  padding-left: 18px;
+}
+div.average-rating {
+  padding-left: 18px;
+  position: relative;
+  top: -15px;
+  span {
+    display: inline-block;
+    color: #FFF;
+
+  }
+
+  ul {
+    display: inline-block;
+    width: 100px;
+  }
+
+  .star img {
+    background: #222;
+    width: 100%;
+    height: auto;
+    top: 4px;
+    position: relative;
+  }
+
+  .star.active img {
+    background-color: rgb(16, 109, 227);
+  }
+
+  .star {
+    width: 20px;
+    height: auto;
+    margin-right: 0;
+    float: left;
+  }
+}
+
 .carousel-footer {
   width: $main;
   margin: 0 auto;
