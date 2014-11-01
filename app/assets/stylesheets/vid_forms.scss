@@ -1,11 +1,11 @@
 @import "./_variables";
 
-#submit-vid-form > .modal-backdrop .fade .in {
+.submit-vid-form > .modal-backdrop .fade .in {
     background-color: black;
     opacity: .1;
   }
 
-#submit-vid-form, .edit-vid-form {
+.submit-vid-form, .edit-vid-form {
 
   .modal-content {
     width: 565px;

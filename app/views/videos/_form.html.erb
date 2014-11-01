@@ -1,5 +1,5 @@
   <!-- Modal -->
-  <div class="modal fade" id="submit-vid-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade submit-vid-form" id="submit-vid-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -27,3 +27,36 @@
     </div>
   </div>
 
+<% if @show_video && @show_video.user_id == current_user.id %>
+
+  <!-- Modal -->
+  <div class="modal fade submit-vid-form" id="edit-vid-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <h1>EDIT VIDEO</h1>
+              </div>
+              <div class="modal-body">
+                  <%= form_for :video, method: :put do |f| %>
+                    <%= f.hidden_field :feature, :value => @show_video.feature %>
+                    <h2>TITLE</h2>
+                    <h5>Give the video a snazzy title that makes people curious, e.g. "How to Start a Movement in 3 Minutes"</h5>
+                    <%= f.text_field :title, :size => "80x40", required: :true, :autofocus => true, remote: true, :value => @show_video.title %>
+                    <h2>URL</h2><h5>(Vimeo or YouTube)</h5>
+                    <%= f.text_field :url, :size => "80x40", placeholder: 'http://', required: :true, :value => @show_video.url %>
+                    <h2>DESCRIPTION</h2>
+                    <h5>Tell us how this video impacted you and why it matters.</h5>
+
+                    <%= f.text_area :description, :size => "81x4", :rows => 3, required: :true, :value => @show_video.description %><br>
+                    </div>
+                    <div class="modal-footer">
+                        <%= f.submit "Done" %>
+                  <% end %>
+                  </div>
+                  </div>
+      </div>
+  </div>
+
+<% end %>

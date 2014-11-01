@@ -4,8 +4,9 @@ $(document).ready(function(){
     $('#submit-vid-form').modal('show');
   });
 
-  $('.profile-vid-edit').on('click', function(e){
-    e.preventDefault();
-    $('#submit-vid-form').modal('show');
+  $('.edit-video').on('click', function(e){
+      e.preventDefault();
+      $('#edit-vid-form').modal('show');
   });
+
 });

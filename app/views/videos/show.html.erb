@@ -1,6 +1,9 @@
 <div class="container">
   <div class="inner-container main-video">  
-    <h1><%= @show_video.title %></h1>
+    <h1><%= @show_video.title %>
+      <% if @show_video.user_id == current_user.id %>
+        <a href="#" class="edit-video">Edit Video</a>
+      <% end %></h1>
 
     <div class="vid-link"><%= @show_video.link.html_safe %></div>
     

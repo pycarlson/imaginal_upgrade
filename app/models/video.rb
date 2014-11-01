@@ -18,6 +18,10 @@ class Video < ActiveRecord::Base
     average == nil ? 0 : average.average
   end
 
+  def average_rating
+    average_rating = self.overall_rating
+  end
+
   def update_overall_video_rating(rating)
     self.overall_stars += rating.num_stars 
     self.overall_votes += 1 
