@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
 
   after_create  :build_profile
 
+  def is_admin?
+   self.admin == true
+  end
+
   private
 
   def build_profile
@@ -22,10 +26,16 @@ class User < ActiveRecord::Base
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     if user
+      user.name = auth.extra.raw_info.name
+      user.uid = auth.uid
+      user.save
       return user
     else
       registered_user = User.where(:email => auth.info.email).first
       if registered_user
+        registered_user.name = auth.extra.raw_info.name
+        registered_user.uid = auth.uid
+        registered_user.save
         return registered_user
       else
         user = User.create(name:auth.extra.raw_info.name,

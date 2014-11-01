@@ -27,7 +27,7 @@
     </div>
   </div>
 
-<% if @show_video && @show_video.user_id == current_user.id %>
+<% if @show_video && (@show_video.user_id == current_user.id || current_user.is_admin?) %>
 
   <!-- Modal -->
   <div class="modal fade submit-vid-form" id="edit-vid-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

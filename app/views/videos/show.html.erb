@@ -1,7 +1,7 @@
 <div class="container">
   <div class="inner-container main-video">  
     <h1><%= @show_video.title %>
-      <% if @show_video.user_id == current_user.id %>
+      <% if @show_video.user_id == current_user.id || current_user.is_admin? %>
         <a href="#" class="edit-video">Edit Video</a>
       <% end %></h1>
 
@@ -86,14 +86,6 @@
 </div>
 
 <div class="facebook-comments">
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=486457148162945&version=v2.0";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
     <div class="fb-comments" data-href="http://developers.facebook.com/docs/plugins/comments/" data-width="900" data-numposts="5" data-colorscheme="dark"></div>
 </div>
 
