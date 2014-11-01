@@ -12,9 +12,9 @@
           </div>
           <div class="average-rating">
             <span>Imaginality: </span>
-            <ul title="Imaginality rating: <%=video.overall_rating %>">
+            <ul title="Imaginality rating: <%=video.average_rating %>">
               <% 1.upto(5) do |i| %>
-                <% if i <= video.overall_rating %>
+                <% if i <= video.average_rating %>
                   <li class="star active"><%= image_tag("../assets/bigger-star-from-Jeff.png")%></li>
                 <% else %>
                   <li class="star"><%= image_tag("../assets/bigger-star-from-Jeff.png")%></li>
