@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
     if user
       user.name = auth.extra.raw_info.name
       user.uid = auth.uid
+      user.provider = auth.provider
       user.save
       return user
     else
@@ -35,6 +36,7 @@ class User < ActiveRecord::Base
       if registered_user
         registered_user.name = auth.extra.raw_info.name
         registered_user.uid = auth.uid
+        registered_user.provider = auth.provider
         registered_user.save
         return registered_user
       else
