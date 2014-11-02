@@ -5,7 +5,7 @@
         <a href="#" class="edit-video">Edit Video</a>
       <% end %></h1>
 
-    <div class="vid-link"><%= @show_video.link.html_safe %></div>
+    <div class="vid-link"><%= @show_video.embed_code.html_safe %></div>
     
     <div class="add-stars-box">
       <% if flash[:alert] %>
@@ -64,7 +64,7 @@
           method: 'feed',
           name: '<%= @show_video.title %>',
           link: 'http://imaginal.herokuapp.com/videos/<%= @show_video.id %>',
-          picture: '<%= @show_video.facebook_thumbnail_link %>',
+          picture: '<%= @show_video.facebook_thumbnail %>',
           description: '<%= @show_video.description %>',
           message: ''
         });
