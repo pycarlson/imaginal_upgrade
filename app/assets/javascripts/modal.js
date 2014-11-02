@@ -9,4 +9,8 @@ $(document).ready(function(){
       $('#edit-vid-form').modal('show');
   });
 
+  $('.modal-footer input').click(function() {
+     console.log('click');
+  });
+
 });
