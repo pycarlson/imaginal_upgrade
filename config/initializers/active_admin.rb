@@ -59,7 +59,7 @@ ActiveAdmin.setup do |config|
 
   # restrict access to admin module for non-admin users
   def authenticate_admin_user!
-    redirect_to root_path unless current_user.is_admin?
+    redirect_to root_path unless current_user && current_user.is_admin?
   end
 
   # == User Authorization

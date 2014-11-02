@@ -1,0 +1,88 @@
+<script type="text/javascript">
+
+  var source_width = '<%=video.video_width %>';
+  var source_height = '<%=video.video_height %>';
+
+  var ratio = source_width / source_height;
+
+  var width = 900;
+  var height = Math.round(width / ratio);
+
+</script>
+
+<div id="player"></div>
+
+<% if video.provider == 'youtube' %>
+
+  <script src="http://www.youtube.com/player_api"></script>
+  <script type="text/javascript">
+    // create youtube player
+    var player;
+
+    function onYouTubePlayerAPIReady() {
+      player = new YT.Player('player', {
+        height: height,
+        width: width,
+        videoId: '<%=video.provider_id %>',
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    // autoplay video
+    function onPlayerReady(event) {
+      event.target.playVideo();
+    }
+
+    // when video ends
+    function onPlayerStateChange(event) {
+      if(event.data === 0) {
+        if(typeof playerFinished == 'function') {
+          playerFinished();
+        }
+      }
+    }
+
+  </script>
+
+<% elsif video.provider == 'vimeo' %>
+  <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+  <script type="text/javascript">
+    var html = '<iframe id="player-iframe" src="//player.vimeo.com/video/<%=video.provider_id %>?api=1&player_id=player-iframe&autoplay=true" width="' + width + '" height="' + height + '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+    $('#player').html(html);
+
+    $(document).ready(function() {
+      // Listen for the ready event for any vimeo video players on the page
+      var player = $('#player-iframe')[0];
+      $f(player).addEvent('ready', ready);
+
+      function addEvent(element, eventName, callback) {
+        if (element.addEventListener) {
+          element.addEventListener(eventName, callback, false);
+        }
+        else {
+          element.attachEvent(eventName, callback, false);
+        }
+      }
+
+      function ready(player_id) {
+        console.log('ready!');
+        var froogaloop = $f(player_id);
+
+        function onFinish() {
+          froogaloop.addEvent('finish', function(data) {
+            if(typeof playerFinished == 'function') {
+              playerFinished();
+            }
+          });
+        }
+        onFinish();
+      }
+    });
+
+
+  </script>
+
+<%end%>

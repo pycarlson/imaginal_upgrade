@@ -7,20 +7,20 @@
 
     <h2><%= @feature.title %></h2>
 
-    <div class="vid-link"><%= @feature.link.html_safe %></div>
+    <div class="vid-link">
+        <%= render "shared/player", video: @feature %>
+    </div>
   </div>
 
+  <%= render 'videos/form' %>
 
-<%= render 'videos/form' %>
+  <div class="carousel-footer">
+    <%= render 'production_quality_carousel' %>
+    <%= render 'radical_creativity_carousel' %>
+    <%= render 'communal_effort_carousel' %>
+    <%= render 'radical_inclusivity_carousel' %>
+    <%= render 'civic_responsibility_carousel' %>
+    <%= render 'immediacy_carousel' %>
+  </div>
 
-<div class="carousel-footer">
-
-<%= render 'production_quality_carousel' %>
-<%= render 'radical_creativity_carousel' %>
-<%= render 'communal_effort_carousel' %>
-<%= render 'radical_inclusivity_carousel' %>
-<%= render 'civic_responsibility_carousel' %>
-<%= render 'immediacy_carousel' %>
-
-</div>
 </div>
