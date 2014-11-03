@@ -21,7 +21,7 @@ class Video < ActiveRecord::Base
   end
 
   def average_rating
-    average_rating = self.overall_rating
+    average_rating = self.overall_rating.round
   end
 
   def update_overall_video_rating(rating)

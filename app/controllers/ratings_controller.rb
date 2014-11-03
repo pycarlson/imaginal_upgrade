@@ -19,12 +19,8 @@ class RatingsController < ApplicationController
       rating = Rating.new(num_stars: params[:num_stars])
       rating.ip_address = request.remote_ip
       rating.category_id = params[:category_id]
-      @video = Video.find(params[:video_id])
-      @category = Category.find(params[:category_id])
+      rating.video_id = params[:video_id]
       if rating.save
-        @video.ratings << rating
-        Average.update(rating)
-        @video.update_overall_video_rating(rating)
         redirect_to video_path(params[:video_id])
       else
         redirect_to root_url
