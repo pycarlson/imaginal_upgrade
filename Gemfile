@@ -24,6 +24,7 @@ gem 'inherited_resources', '~> 1.4.1'
 gem 'activeadmin', github: 'activeadmin'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'acts-as-taggable-on', '~> 3.4'
 
 group :development do
   gem 'sqlite3'
