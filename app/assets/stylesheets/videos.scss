@@ -104,9 +104,30 @@ div.average-rating {
   li div.images {
     margin: 18px;
     width: 210px;
-    height: 104px;
+    height: 150px;
     margin-right: 0;
-    padding-top: 15px;
+    overflow: hidden;
+    position: relative;
+
+    span {
+        height: 51px;
+        margin: 0;
+        bottom: 0;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        background: rgba(22, 20, 22, .7);
+        padding: 5px 10px 10px 10px;
+        color: $white;
+        font-weight: 400;
+        font-size: 14px;
+        text-decoration: none;
+      }
+      img {
+        top: -35px;
+        position: relative;
+        left: -25px;
+      }
   }
 
   ul {
