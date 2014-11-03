@@ -145,3 +145,42 @@ div.average-rating {
   width: 900px;
   margin: 0 auto;
 }
+
+.vid-link {
+  overflow: hidden;
+  position: relative;
+  float: left;
+  #player {
+    z-index: 1;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    float: left;
+  }
+  .finished-popup {
+    display: none;
+    background: #FFF;
+    top: 0;
+    left: 0;
+    float: left;
+
+    form {
+      padding: 20px;
+      input {
+        width: 100%;
+      }
+      p {
+        padding: 0 0 20px 0;
+      }
+    }
+
+    .buttons {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+}

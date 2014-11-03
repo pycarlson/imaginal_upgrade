@@ -9,11 +9,35 @@
 
         <script type="text/javascript">
           function playerFinished() {
-            console.log('finished');
+
+            $('.finished-popup .watch-again').click(function() {
+               $(this).parent().parent().hide();
+               $('#player').show();
+                playerStart();
+            });
+
+            $('.finished-popup').width($('#player').width()).height($('#player').height());
+            $('#player').hide();
+            $('.finished-popup').show();
+
           }
         </script>
 
         <%= render "shared/player", video: @show_video %>
+
+        <div class="finished-popup">
+            <form method="post" action="#">
+                <h3>We'd love you to join our community!</h3>
+                <p><input type="text" name="full-name" placeholder="Full name" value=""></p>
+                <p><input type="text" name="email" placeholder="E-mail Address" value=""></p>
+                <p><button>Register</button></p>
+            </form>
+            <div class="buttons">
+                <button class="watch-again">Watch Video Again</button>
+            </div>
+        </div>
+
+
     </div>
     
     <div class="add-stars-box">
