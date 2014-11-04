@@ -1,6 +1,10 @@
 <div class="search-form-container">
 
-    <h2>My Videos</h2>
+    <% if current_user && current_user.id == @profile.user.id %>
+      <h2>My Videos</h2>
+    <% else %>
+      <h2>Videos From <%=@profile.user.name %></h2>
+    <% end %>
 
     <%= render 'shared/videos' %>
 

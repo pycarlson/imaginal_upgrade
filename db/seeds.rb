@@ -23,8 +23,8 @@ user.videos << Video.create(title: "Philosophy of Joy", description: "This is ju
 user.videos << Video.create(title: "Guide to Happiness", description: "This is just another film to test out what things look like at this point.", url: "http://www.youtube.com/watch?v=irornIAQzQY" )
 user.videos << Video.create(title: "The Art of Happiness", description: "This is just another film to test out what things look like at this point.", url: "http://www.youtube.com/watch?v=ZvTnNIO1BT0" )
 
-user.profile = Profile.create(full_name: "Paulette Luftig", blurb: "I am a human... being...")
-user.save
+#user.profile = Profile.create(full_name: "Paulette Luftig", blurb: "I am a human... being...")
+#user.save
 
 user = User.create(email: "aducker@hotmail.com", password: "password", password_confirmation: "password", admin: true)
 
