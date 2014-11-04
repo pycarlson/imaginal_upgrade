@@ -41,6 +41,7 @@ class VideosController < ApplicationController
     @video = Video.create(video_params)
     @video.user = current_user
     if @video.save
+      flash[:new] = 'true'
       redirect_to @video
     else
       flash[:alert] = "Due to the following your video has not been saved: #{@video.errors.full_messages.join(", ")}. Please try again."
@@ -67,7 +68,7 @@ class VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit(:link, :title, :url, :description, :feature)
+    params.require(:video).permit(:link, :title, :url, :description, :feature, :tag_list)
   end
 
   def update_click_count

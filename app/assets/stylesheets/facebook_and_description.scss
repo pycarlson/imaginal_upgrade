@@ -16,7 +16,7 @@
 
 .description {
   width: 260px;
-  height: 80px;
+  min-height: 80px;
   float: right;
   position: relative;
   font-size: 14px;
@@ -27,6 +27,11 @@
   a {
     font-weight: bold;
     line-height: 40px;
+  }
+  .tags {
+    a {
+      font-weight: normal;
+    }
   }
   img {
     width: 40px;

@@ -11,6 +11,8 @@ class Video < ActiveRecord::Base
   validates :url, :title, uniqueness: true
   validates_length_of :description, :maximum => 250
 
+  acts_as_taggable # Alias for acts_as_taggable_on :tags
+
   def self.search(query)
     where("lower(title) like ? OR lower(description) like ?", "%#{query.downcase}%", "%#{query.downcase}%")
   end

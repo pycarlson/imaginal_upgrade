@@ -23,7 +23,13 @@
           }
         </script>
 
-        <%= render "shared/player", video: @show_video, autoplay: true %>
+        <% if flash[:new] || params[:new] %>
+            <% autoplay = false %>
+        <% else %>
+            <% autoplay = true %>
+        <% end %>
+
+        <%= render "shared/player", video: @show_video, autoplay: autoplay %>
 
         <div class="finished-popup">
             <form method="post" action="#">
@@ -89,6 +95,11 @@
                <% end %>
              <%=@show_video.user.name %></a></p>
          <p><%= @show_video.description %></p>
+         <% if @show_video.tag_list.count != 0 %>
+         <div class="tags">
+             Tags: <%= raw @show_video.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+         </div>
+         <% end %>
      </div>
 
 

@@ -13,9 +13,12 @@ ImaginalUpgrade::Application.routes.draw do
   resources :profiles, only: [:show]
 
   get 'videos/:id/:name', :to => 'videos#show'
+  put 'videos/:id/:name', :to => 'videos#update'
   resources :videos
 
   resources :categories
+
+  resources :tags
 
   get '/about' => 'static_pages#about', :as => :about
   # get '/ratings/add_rating' => 'ratings#add_rating', :as => :add_rating
