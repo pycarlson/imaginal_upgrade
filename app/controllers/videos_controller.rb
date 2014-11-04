@@ -17,8 +17,9 @@ class VideosController < ApplicationController
 
     @show_video = Video.find(params[:id])
     @show_video.update_attribute(:plays, @show_video.plays + 1)
-
+    #@show_video_user = User.find(@show_video.user_id)
     @videos = Video.all
+
     @small_vids = @videos.sample(20)
     @categories = Category.all
     @rating = Rating.new

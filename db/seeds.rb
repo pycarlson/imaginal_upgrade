@@ -1,6 +1,6 @@
 #encoding: utf-8
 
-user = User.create(email: "pyluftig@gmail.com", password: "password", password_confirmation: "password", admin: true)
+user = User.create(email: "pyluftig@gmail.com", password: "password", name: "Paulette Luftig", password_confirmation: "password", admin: true)
 
 user.videos << Video.create(title: "Lounge Music", description: "This is just another film to test out what things look like at this point.", url: "http://www.youtube.com/watch?v=pHfCj8KsgRY" )
 user.videos << Video.create(title: "Relax Music", description: "This is just another film to test out what things look like at this point.", url: "http://www.youtube.com/watch?v=p6kE_EW0fTo" )

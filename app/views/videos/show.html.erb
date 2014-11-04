@@ -83,7 +83,13 @@
     </div>
 
      <a><div class="full-share" id="fb-image"><%=link_to image_tag('../assets/Facebook_share_button.png') %></div></a>
-     <div class="description"><%= @show_video.description %></div>
+     <div class="description">
+         <p><a href="<%=profile_path(@show_video.user.profile.id) %>"><% if @show_video.user.uid != '' %>
+               <img alt="" title="" src="https://graph.facebook.com/<%= @show_video.user.uid %>/picture?type=square" />
+               <% end %>
+             <%=@show_video.user.name %></a></p>
+         <p><%= @show_video.description %></p>
+     </div>
 
 
     <div class="share">

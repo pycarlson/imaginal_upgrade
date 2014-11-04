@@ -24,6 +24,19 @@
   color: $paleGray;
   padding-bottom: 30px;
   margin-top: 15px;
+  a {
+    font-weight: bold;
+    line-height: 40px;
+  }
+  img {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin: 0 15px 15px 0;
+  }
+  p {
+    clear: both;
+  }
 }
 
 #facebook-popup {
