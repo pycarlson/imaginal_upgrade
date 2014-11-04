@@ -9,9 +9,10 @@ ImaginalUpgrade::Application.routes.draw do
 
   root :to => "static_pages#home"
 
-
-
+  get 'profiles/:id/:name', :to => 'profiles#show'
   resources :profiles, only: [:show]
+
+
   resources :videos 
   resources :categories
 
