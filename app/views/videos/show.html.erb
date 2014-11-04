@@ -23,7 +23,7 @@
           }
         </script>
 
-        <%= render "shared/player", video: @show_video %>
+        <%= render "shared/player", video: @show_video, autoplay: true %>
 
         <div class="finished-popup">
             <form method="post" action="#">
@@ -84,7 +84,7 @@
 
      <a><div class="full-share" id="fb-image"><%=link_to image_tag('../assets/Facebook_share_button.png') %></div></a>
      <div class="description">
-         <p><a href="<%=profile_path(@show_video.user.profile.id) %>"><% if @show_video.user.uid != '' %>
+         <p><a href="<%=profile_path(@show_video.user.profile) %>"><% if @show_video.user.uid != '' %>
                <img alt="" title="" src="https://graph.facebook.com/<%= @show_video.user.uid %>/picture?type=square" />
                <% end %>
              <%=@show_video.user.name %></a></p>

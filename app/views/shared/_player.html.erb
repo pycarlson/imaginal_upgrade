@@ -33,7 +33,9 @@
 
     // autoplay video
     function onPlayerReady(event) {
-      event.target.playVideo();
+      <% if autoplay %>
+        event.target.playVideo();
+      <% end %>
     }
 
     function playerStart() {
@@ -55,7 +57,7 @@
 <% elsif video.provider == 'vimeo' %>
   <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
   <script type="text/javascript">
-    var html = '<iframe id="player-iframe" src="//player.vimeo.com/video/<%=video.provider_id %>?api=1&player_id=player-iframe&autoplay=true" width="' + width + '" height="' + height + '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+    var html = '<iframe id="player-iframe" src="//player.vimeo.com/video/<%=video.provider_id %>?api=1&player_id=player-iframe<% if autoplay %>&autoplay=true<% end %>" width="' + width + '" height="' + height + '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
     $('#player').html(html);
 
     $(document).ready(function() {

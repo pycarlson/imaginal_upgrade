@@ -10,7 +10,7 @@
 
         <li class="nav-right thumb"><a href="http://facebook.com/<%=current_user.uid %>"><img alt="Signed in as <%=current_user.name %>" title="Signed in as <%=current_user.name %>" src="https://graph.facebook.com/<%= current_user.uid %>/picture?type=square" /></a></li>
         <li class="nav-right"><%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %></li>
-        <li class="nav-right"><%= link_to "MY VIDEOS", profile_path(current_user.profile.id) %></li>
+        <li class="nav-right"><%= link_to "MY VIDEOS", profile_path(current_user.profile) %></li>
         <li class="nav-right"><%= link_to "ALL VIDEOS", videos_path %></li>
       <% else %>
         <li class="get-signed-in"><a href="<%= user_omniauth_authorize_path(:facebook) %>"></a></li>
