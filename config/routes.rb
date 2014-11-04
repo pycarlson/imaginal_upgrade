@@ -14,6 +14,8 @@ ImaginalUpgrade::Application.routes.draw do
 
   get 'videos/:id/:name', :to => 'videos#show'
   put 'videos/:id/:name', :to => 'videos#update'
+  post 'videos/:id', :to => 'videos#destroy'
+  post 'videos/:id/:name', :to => 'videos#destroy'
   resources :videos
 
   resources :categories

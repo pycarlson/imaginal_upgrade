@@ -42,7 +42,7 @@ class VideosController < ApplicationController
     @video.user = current_user
     if @video.save
       flash[:new] = 'true'
-      redirect_to @video
+      redirect_to video_path(@video)
     else
       flash[:alert] = "Due to the following your video has not been saved: #{@video.errors.full_messages.join(", ")}. Please try again."
       redirect_to root_path
@@ -62,7 +62,8 @@ class VideosController < ApplicationController
 
   def destroy
     @video.destroy
-    redirect_to :back
+    flash[:notice] = "Video deleted."
+    redirect_to root_path
   end
 
   private

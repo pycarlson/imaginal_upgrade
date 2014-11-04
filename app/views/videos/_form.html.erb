@@ -1,41 +1,37 @@
 <% if current_user %>
-  <!-- Modal -->
-  <div class="modal fade submit-vid-form" id="submit-vid-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-
-          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <h1>SUBMIT A VIDEO</h1>
+    <!-- Modal -->
+    <div class="modal fade submit-vid-form" id="submit-vid-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h1>SUBMIT A VIDEO</h1>
+                </div>
+                <div class="modal-body">
+                    <%= form_for @video do |f| %>
+                        <h2>TITLE</h2>
+                        <h5>Give the video a snazzy title that makes people curious, e.g. "How to Start a Movement in 3 Minutes"</h5>
+                        <%= f.text_field :title, :size => "80x40", required: :true, :autofocus => true, remote: true %>
+                        <h2>URL</h2><h5>(Vimeo or YouTube)</h5>
+                        <%= f.text_field :url, :size => "80x40", placeholder: 'http://', required: :true %>
+                        <h2>DESCRIPTION</h2>
+                        <h5>Tell us how this video impacted you and why it matters.</h5>
+                        <%= f.text_area :description, :size => "81x4", :rows => 3, required: :true %><br>
+                        <div class="modal-footer">
+                            <%= f.submit "Done" %>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <%= form_for @video do |f| %>
-          <h2>TITLE</h2>
-          <h5>Give the video a snazzy title that makes people curious, e.g. "How to Start a Movement in 3 Minutes"</h5>
-          <%= f.text_field :title, :size => "80x40", required: :true, :autofocus => true, remote: true %>
-          <h2>URL</h2><h5>(Vimeo or YouTube)</h5>
-          <%= f.text_field :url, :size => "80x40", placeholder: 'http://', required: :true %>
-          <h2>DESCRIPTION</h2>
-          <h5>Tell us how this video impacted you and why it matters.</h5>
-
-          <%= f.text_area :description, :size => "81x4", :rows => 3, required: :true %><br>
-
-        </div>
-        <div class="modal-footer">
-          <%= f.submit "Done" %>
-          <% end %>
-        </div>
-      </div>
     </div>
-  </div>
 
     <% if @show_video && (flash[:new] || params[:new]) && (@show_video.user_id == current_user.id || current_user.is_admin?) %>
 
         <script type="text/javascript">
             $(document).ready(function(){
-               $('#tag-vid-form').modal('show');
+                $('#tag-vid-form').modal('show');
             });
-
         </script>
 
         <!-- Modal -->
@@ -43,7 +39,6 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                         <h1>YOUR VIDEO HAS BEEN CREATED</h1>
                         <p>Please take a moment to add some tags to the video.</p>
@@ -55,7 +50,7 @@
                             <h5>Tags separated by commas.</h5>
                             <%= f.text_field :tag_list, :value => @show_video.tag_list %>
                             <div class="modal-footer">
-                                <%= f.submit "Done" %>
+                                <%= f.submit "Add Tags" %>
                             </div>
                         <% end %>
                     </div>
@@ -64,39 +59,61 @@
         </div>
     <% end %>
 
-      <% if @show_video && (@show_video.user_id == current_user.id || current_user.is_admin?) %>
+    <% if @show_video && (@show_video.user_id == current_user.id || current_user.is_admin?) %>
+
+        <!-- Modal -->
+        <div class="modal fade submit-vid-form" id="delete-vid-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h1>DELETE VIDEO</h1>
+                    </div>
+                    <div class="modal-body">
+                        <%= form_for :video, method: :destroy do |f| %>
+                            <h5>Are you sure you want to delete this video?</h5>
+                            <div class="modal-footer">
+                                <%= f.submit "Delete This Video" %>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Modal -->
         <div class="modal fade submit-vid-form" id="edit-vid-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                         <h1>EDIT VIDEO</h1>
                     </div>
                     <div class="modal-body">
                         <%= form_for :video, method: :put do |f| %>
-                          <%= f.hidden_field :feature, :value => @show_video.feature %>
-                          <h2>TITLE</h2>
-                          <h5>Give the video a snazzy title that makes people curious, e.g. "How to Start a Movement in 3 Minutes"</h5>
-                          <%= f.text_field :title, :size => "80x40", required: :true, :autofocus => true, remote: true, :value => @show_video.title %>
-                          <h2>URL</h2><h5>(Vimeo or YouTube)</h5>
-                          <%= f.text_field :url, :size => "80x40", placeholder: 'http://', required: :true, :value => @show_video.url %>
-                          <h2>DESCRIPTION</h2>
-                          <h5>Tell us how this video impacted you and why it matters.</h5>
-                          <%= f.text_area :description, :size => "81x4", :rows => 3, required: :true, :value => @show_video.description %><br>
-                          <h2>TAGS</h2>
-                          <h5>Tags separated by commas.</h5>
-                          <%= f.text_field :tag_list, :value => @show_video.tag_list %>
-                          <div class="modal-footer">
-                              <%= f.submit "Done" %>
+                            <%= f.hidden_field :feature, :value => @show_video.feature %>
+                            <h2>TITLE</h2>
+                            <h5>Give the video a snazzy title that makes people curious, e.g. "How to Start a Movement in 3 Minutes"</h5>
+                            <%= f.text_field :title, :size => "80x40", required: :true, :autofocus => true, remote: true, :value => @show_video.title %>
+                            <h2>URL</h2><h5>(Vimeo or YouTube)</h5>
+                            <%= f.text_field :url, :size => "80x40", placeholder: 'http://', required: :true, :value => @show_video.url %>
+                            <h2>DESCRIPTION</h2>
+                            <h5>Tell us how this video impacted you and why it matters.</h5>
+                            <%= f.text_area :description, :size => "81x4", :rows => 3, required: :true, :value => @show_video.description %><br>
+                            <h2>TAGS</h2>
+                            <h5>Tags separated by commas.</h5>
+                            <%= f.text_field :tag_list, :value => @show_video.tag_list %>
+                            <div class="modal-footer">
+                                <%= f.submit "Done" %>
+                            </div>
+                            <div>
+                                <a href="#" class="delete-video">Delete This Video</a>
+                            </div>
                         <% end %>
                     </div>
                 </div>
             </div>
         </div>
-      </div>
-      <% end %>
-
     <% end %>
+
+<% end %>
