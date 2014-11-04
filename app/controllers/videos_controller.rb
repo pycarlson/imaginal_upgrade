@@ -16,8 +16,7 @@ class VideosController < ApplicationController
   def show
 
     @show_video = Video.find(params[:id])
-    @show_video_type = @show_video.get_video_type(@show_video.url)
-    @show_video_id = @show_video.get_video_id(@show_video.url)
+    @show_video.update_attribute(:plays, @show_video.plays + 1)
 
     @videos = Video.all
     @small_vids = @videos.sample(20)

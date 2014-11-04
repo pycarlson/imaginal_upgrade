@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102190539) do
+ActiveRecord::Schema.define(version: 20141103172303) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20141102190539) do
     t.integer  "video_height"
     t.integer  "thumbnail_width"
     t.integer  "thumbnail_height"
+    t.integer  "plays",            default: 0
   end
 
 end

@@ -6,9 +6,9 @@
 
   .carousel-control {
     border: none;
-    background-color: transparent;
+    background-color: none;
     top: 105px;
-
+    background-image: none;
     &.right {
       right: -85px;
     }
@@ -19,11 +19,22 @@
   }
 
   div.thumbnail {
-    border: none;
     height: 130px;
-    width: 210px;
     background-color: $backBody;
+    overflow: hidden;
+    border: none;
+    postion: relative;
+
+    img {
+      top: -60px;
+      position: relative;
+      left: 0;
+      height: 220px;
+      width: auto;
+      border-radius: none;
+    }
   }
+
 
   h2 {
     font-weight: 400;
@@ -67,20 +78,20 @@ ul.thumbnails {
 .caption {
   height: 51px;
   margin: 0;
-  margin-left: 4px;
-  top: -60px;
-  width: 202px;
-  position: relative;
+  top: 79px;
+  width: 100%;
+  position: absolute;
   z-index: 1;
   background: rgba(22, 20, 22, .7);
   padding: 5px 10px 10px 10px;
-
   a {
     color: $white;
     font-weight: 400;
     font-size: 14px;
     text-decoration: none;
   }
+
+
 }
 
 

@@ -104,9 +104,30 @@ div.average-rating {
   li div.images {
     margin: 18px;
     width: 210px;
-    height: 104px;
+    height: 150px;
     margin-right: 0;
-    padding-top: 15px;
+    overflow: hidden;
+    position: relative;
+
+    span {
+        height: 51px;
+        margin: 0;
+        bottom: 0;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        background: rgba(22, 20, 22, .7);
+        padding: 5px 10px 10px 10px;
+        color: $white;
+        font-weight: 400;
+        font-size: 14px;
+        text-decoration: none;
+      }
+      img {
+        top: -35px;
+        position: relative;
+        left: -35px;
+      }
   }
 
   ul {
@@ -123,4 +144,43 @@ div.average-rating {
 .facebook-comments {
   width: 900px;
   margin: 0 auto;
+}
+
+.vid-link {
+  overflow: hidden;
+  position: relative;
+  float: left;
+  #player {
+    z-index: 1;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    float: left;
+  }
+  .finished-popup {
+    display: none;
+    background: #FFF;
+    top: 0;
+    left: 0;
+    float: left;
+
+    form {
+      padding: 20px;
+      input {
+        width: 100%;
+      }
+      p {
+        padding: 0 0 20px 0;
+      }
+    }
+
+    .buttons {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
 }
