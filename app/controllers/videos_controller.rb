@@ -6,7 +6,7 @@ class VideosController < ApplicationController
   
   def index
     if params[:search]
-      @videos = Video.search(params[:search]).order('overall_rating DESC')
+      @videos = Video.search(params[:search]).where(temporary_owner: '').order('overall_rating DESC').page params[:page]
     else
       @videos  = Video.where(temporary_owner: '').order('overall_rating DESC').page params[:page]
     end
@@ -15,22 +15,28 @@ class VideosController < ApplicationController
 
   def show
 
-    @show_video = Video.find(params[:id])
-    @show_video.update_attribute(:plays, @show_video.plays + 1)
-    #@show_video_user = User.find(@show_video.user_id)
-    @videos = Video.all
+    @show_video = Video.find_by(temporary_owner: '', id: params[:id])
 
-    @small_vids = @videos.sample(20)
-    @categories = Category.all
-    @rating = Rating.new
-    @video = Video.new
+    if @show_video
 
-    @production_quality_average = @show_video.get_average_rating_for_category(1)
-    @radical_creativity_average = @show_video.get_average_rating_for_category(2)
-    @communal_effort_average = @show_video.get_average_rating_for_category(3)
-    @radical_inclusivity_average = @show_video.get_average_rating_for_category(4)
-    @civic_responsibility_average = @show_video.get_average_rating_for_category(5)
-    @immediacy_average = @show_video.get_average_rating_for_category(6)
+      @show_video.update_attribute(:plays, @show_video.plays + 1)
+      #@show_video_user = User.find(@show_video.user_id)
+      @videos = Video.all
+
+      @small_vids = @videos.sample(20)
+      @categories = Category.all
+      @rating = Rating.new
+      @video = Video.new
+
+      @production_quality_average = @show_video.get_average_rating_for_category(1)
+      @radical_creativity_average = @show_video.get_average_rating_for_category(2)
+      @communal_effort_average = @show_video.get_average_rating_for_category(3)
+      @radical_inclusivity_average = @show_video.get_average_rating_for_category(4)
+      @civic_responsibility_average = @show_video.get_average_rating_for_category(5)
+      @immediacy_average = @show_video.get_average_rating_for_category(6)
+    else
+      redirect_to videos_path
+    end
   end
 
   def new

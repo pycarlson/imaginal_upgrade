@@ -1,30 +1,35 @@
-<% if current_user %>
-    <!-- Modal -->
-    <div class="modal fade submit-vid-form" id="submit-vid-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h1>SUBMIT A VIDEO</h1>
-                </div>
-                <div class="modal-body">
-                    <%= form_for @video do |f| %>
-                        <h2>TITLE</h2>
-                        <h5>Give the video a snazzy title that makes people curious, e.g. "How to Start a Movement in 3 Minutes"</h5>
-                        <%= f.text_field :title, :size => "80x40", required: :true, :autofocus => true, remote: true %>
-                        <h2>URL</h2><h5>(Vimeo or YouTube)</h5>
-                        <%= f.text_field :url, :size => "80x40", placeholder: 'http://', required: :true %>
-                        <h2>DESCRIPTION</h2>
-                        <h5>Tell us how this video impacted you and why it matters.</h5>
-                        <%= f.text_area :description, :size => "81x4", :rows => 3, required: :true %><br>
-                        <div class="modal-footer">
+<!-- Modal -->
+<div class="modal fade submit-vid-form" id="submit-vid-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h1>SUBMIT A VIDEO</h1>
+            </div>
+            <div class="modal-body">
+                <%= form_for @video do |f| %>
+                    <h2>TITLE</h2>
+                    <h5>Give the video a snazzy title that makes people curious, e.g. "How to Start a Movement in 3 Minutes"</h5>
+                    <%= f.text_field :title, :size => "80x40", required: :true, :autofocus => true, remote: true %>
+                    <h2>URL</h2><h5>(Vimeo or YouTube)</h5>
+                    <%= f.text_field :url, :size => "80x40", placeholder: 'http://', required: :true %>
+                    <h2>DESCRIPTION</h2>
+                    <h5>Tell us how this video impacted you and why it matters.</h5>
+                    <%= f.text_area :description, :size => "81x4", :rows => 3, required: :true %><br>
+                    <div class="modal-footer">
+                        <% if current_user %>
                             <%= f.submit "Done" %>
-                        </div>
-                    <% end %>
-                </div>
+                        <% else %>
+                            <%= f.submit "Sign in with Facebook" %>
+                        <% end %>
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>
+</div>
+
+<% if current_user %>
 
     <% if @show_video && (flash[:new] || params[:new]) && (@show_video.user_id == current_user.id || current_user.is_admin?) %>
 
@@ -115,31 +120,4 @@
             </div>
         </div>
     <% end %>
-<% else %>
-    <!-- Modal -->
-    <div class="modal fade submit-vid-form" id="submit-vid-form-sign-in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h1>SUBMIT A VIDEO</h1>
-                </div>
-                <div class="modal-body">
-                    <%= form_for @video do |f| %>
-                        <h2>TITLE</h2>
-                        <h5>Give the video a snazzy title that makes people curious, e.g. "How to Start a Movement in 3 Minutes"</h5>
-                        <%= f.text_field :title, :size => "80x40", required: :true, :autofocus => true, remote: true %>
-                        <h2>URL</h2><h5>(Vimeo or YouTube)</h5>
-                        <%= f.text_field :url, :size => "80x40", placeholder: 'http://', required: :true %>
-                        <h2>DESCRIPTION</h2>
-                        <h5>Tell us how this video impacted you and why it matters.</h5>
-                        <%= f.text_area :description, :size => "81x4", :rows => 3, required: :true %><br>
-                        <div class="modal-footer">
-                            <%= f.submit "Sign in with Facebook" %>
-                        </div>
-                    <% end %>
-                </div>
-            </div>
-        </div>
-    </div>
 <% end %>

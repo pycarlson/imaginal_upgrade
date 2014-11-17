@@ -4,11 +4,15 @@ class StaticPagesController < ApplicationController
 
     if current_user && cookies[:publish_video].length != 0
       @video = Video.find_by(temporary_owner: cookies[:publish_video])
-      @video.user = current_user
-      @video.temporary_owner = ''
-      if @video.save
+      if @video
+        @video.user = current_user
+        @video.temporary_owner = ''
+        if @video.save
+          cookies[:publish_video] = ''
+          @redirect = video_path(@video) + "?new=true"
+        end
+      else
         cookies[:publish_video] = ''
-        @redirect = video_path(@video) + "?new=true"
       end
     end
 

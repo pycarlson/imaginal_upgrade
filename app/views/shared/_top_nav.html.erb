@@ -13,7 +13,7 @@
         <li class="nav-right"><%= link_to "MY VIDEOS", profile_path(current_user.profile) %></li>
         <li class="nav-right"><%= link_to "ALL VIDEOS", videos_path %></li>
       <% else %>
-        <li class="get-signed-in"><a href="#submit-video"></a></li>
+        <li class="to-sub-vid-modal"><a href="#submit-video"></a></li>
         <li class="nav-right"><%= link_to "SIGN IN WITH FACEBOOK", user_omniauth_authorize_path(:facebook) %></li>
         <li class="nav-right"><%= link_to "ALL VIDEOS", videos_path %></li>
       <% end %>
