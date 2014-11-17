@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
 
-  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :authenticate_user!, except: [:index, :show, :create]
   before_filter :update_click_count, only: [:show]
   before_filter :find_video, only: [:edit, :update, :destroy]
   
@@ -8,7 +8,7 @@ class VideosController < ApplicationController
     if params[:search]
       @videos = Video.search(params[:search]).order('overall_rating DESC')
     else
-      @videos  = Video.order('overall_rating DESC').page params[:page]
+      @videos  = Video.where(temporary_owner: '').order('overall_rating DESC').page params[:page]
     end
     @video = Video.new
   end
@@ -38,11 +38,26 @@ class VideosController < ApplicationController
   end
 
   def create
+
     @video = Video.create(video_params)
-    @video.user = current_user
+
+    if current_user
+     @video.user = current_user
+    else
+     random_string = (0...50).map { ('a'..'z').to_a[rand(26)] }.join
+     @video.temporary_owner = random_string
+     cookies[:publish_video] = random_string
+    end
+
     if @video.save
       flash[:new] = 'true'
-      redirect_to video_path(@video)
+
+      if current_user
+        redirect_to video_path(@video)
+      else
+        redirect_to user_omniauth_authorize_path(:facebook)
+      end
+
     else
       flash[:alert] = "Due to the following your video has not been saved: #{@video.errors.full_messages.join(", ")}. Please try again."
       redirect_to root_path

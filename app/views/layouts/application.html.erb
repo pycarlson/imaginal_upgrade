@@ -22,6 +22,12 @@
 
 </head>
 <body>
+  <% if @redirect %>
+       <script type="text/javascript">
+           location.href = '<%=@redirect %>';
+       </script>
+  <% end %>
+
   <%= render "shared/top_nav" %>
   <div id="nav-border"></div>
 

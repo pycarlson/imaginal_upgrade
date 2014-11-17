@@ -3,7 +3,7 @@
     <ul>
       <li class="nav-left logo"><%= link_to image_tag("logo.png"), root_path %></li>
       <% if user_signed_in? %>
-        <li class="to-sub-vid-modal"><a href="<%= new_video_path %>"></a></li>
+        <li class="to-sub-vid-modal"><a href="#submit-video"></a></li>
         <% if current_user && current_user.is_admin? %>
                 <li class="nav-right"><%= link_to "ADMIN", '/admin' %></li>
         <% end %>
@@ -13,7 +13,7 @@
         <li class="nav-right"><%= link_to "MY VIDEOS", profile_path(current_user.profile) %></li>
         <li class="nav-right"><%= link_to "ALL VIDEOS", videos_path %></li>
       <% else %>
-        <li class="get-signed-in"><a href="<%= user_omniauth_authorize_path(:facebook) %>"></a></li>
+        <li class="get-signed-in"><a href="#submit-video"></a></li>
         <li class="nav-right"><%= link_to "SIGN IN WITH FACEBOOK", user_omniauth_authorize_path(:facebook) %></li>
         <li class="nav-right"><%= link_to "ALL VIDEOS", videos_path %></li>
       <% end %>
