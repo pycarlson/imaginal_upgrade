@@ -113,7 +113,7 @@
         {
           method: 'feed',
           name: '<%= @show_video.title %>',
-          link: 'http://imaginal.herokuapp.com/videos/<%= @show_video.id %>',
+          link: 'http://imaginal.media/videos/<%= @show_video.id %>',
           picture: '<%= @show_video.facebook_thumbnail %>',
           description: '<%= @show_video.description %>',
           message: ''
@@ -135,7 +135,7 @@
 </div>
 
 <div class="facebook-comments">
-    <div class="fb-comments" data-href="http://developers.facebook.com/docs/plugins/comments/" data-width="900" data-numposts="5" data-colorscheme="dark"></div>
+    <div class="fb-comments" data-href="http://imaginal.media/videos/<%= @show_video.id %>" data-width="900" data-numposts="5" data-colorscheme="dark"></div>
 </div>
 
 <%= render 'form' %>

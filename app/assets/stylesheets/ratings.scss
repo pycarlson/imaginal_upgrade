@@ -63,7 +63,7 @@ div.stars {
   clear: both;
 
   h5 {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 300;
     color: #bcb8cc;
     width: 178px;
@@ -71,6 +71,8 @@ div.stars {
     text-align: right;
     margin-right: 10px;
     cursor: pointer;
+    top: -5px;
+    position: relative;
   }
 
   div.left-stars-box {
