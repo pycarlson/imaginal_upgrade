@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   
   def home
 
-    if current_user && cookies[:publish_video].length != 0
+    if current_user && cookies[:publish_video] && cookies[:publish_video].blank?
       @video = Video.find_by(temporary_owner: cookies[:publish_video])
       if @video
         @video.user = current_user

@@ -75,7 +75,7 @@ class VideosController < ApplicationController
 
   def update
     if @video.update_attributes(video_params)
-      redirect_to video_path(@video)
+      redirect_to "/videos/#{@video.id}/#{@video.title.parameterize}" #not sure why video_path doesn't use the helper method we overloaded
     else
       render :edit
     end
