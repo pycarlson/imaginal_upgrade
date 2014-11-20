@@ -64,32 +64,13 @@ $(document).ready(function(){
     }
   });
 
+  var stars = $('.stars');
 
-  var $productionQualityAverage = $('.yellow').data('avg'); 
-  var $radicalCreativityAverage = $('.violet').data('avg');
-  var $communalEffortAverage = $('.blue').data('avg');
-  var $radicalInclusivityAverage = $('.green').data('avg');
-  var $civicResponsibilityAverage = $('.red').data('avg');
-  var $immediacyAverage = $('.orange').data('avg');
-
-  $('.yellow .colorBoxAverage')
-    .css( 'width', oneStarWidth * $productionQualityAverage )
-    .css( 'background-color', '#C7B500');
-  $('.violet .colorBoxAverage')
-    .css( 'width', oneStarWidth * $radicalCreativityAverage )
-    .css( 'background-color', '#A02FD3');
-  $('.blue .colorBoxAverage')
-    .css( 'width', oneStarWidth * $communalEffortAverage )
-    .css( 'background-color', '#106DE3');
-  $('.green .colorBoxAverage')
-    .css( 'width', oneStarWidth * $radicalInclusivityAverage )
-    .css( 'background-color', '#55BC00');
-  $('.red .colorBoxAverage')
-    .css( 'width', oneStarWidth * $civicResponsibilityAverage )
-    .css( 'background-color', '#D62806');
-  $('.orange .colorBoxAverage')
-    .css( 'width', oneStarWidth * $immediacyAverage )
-    .css( 'background-color', '#D85D00');
+  for(var i = 0; i < stars.length; i++) {
+      var $average = $(stars[i]).data('avg');
+      $(stars[i]).find('.colorBoxAverage')
+          .css( 'width', oneStarWidth * $average );
+  }
 
   $('.stars a').mouseover( function(e) {
     var anchor = $(this),

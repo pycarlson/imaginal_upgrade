@@ -17,12 +17,11 @@
   <%= render 'videos/form' %>
 
   <div class="carousel-footer">
-    <%= render 'production_quality_carousel' %>
-    <%= render 'radical_creativity_carousel' %>
-    <%= render 'communal_effort_carousel' %>
-    <%= render 'radical_inclusivity_carousel' %>
-    <%= render 'civic_responsibility_carousel' %>
-    <%= render 'immediacy_carousel' %>
+
+      <% @categories.each_with_index do |category, index| %>
+        <%= render 'category_carousel', category: category, category_videos: @category_videos[category.id] %>
+      <% end %>
+
   </div>
 
 </div>

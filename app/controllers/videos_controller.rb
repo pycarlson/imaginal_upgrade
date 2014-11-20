@@ -24,16 +24,23 @@ class VideosController < ApplicationController
       @videos = Video.all
 
       @small_vids = @videos.sample(20)
-      @categories = Category.all
+      @categories = Category.all.order('sort_order ASC')
       @rating = Rating.new
       @video = Video.new
 
-      @production_quality_average = @show_video.get_average_rating_for_category(1)
-      @radical_creativity_average = @show_video.get_average_rating_for_category(2)
-      @communal_effort_average = @show_video.get_average_rating_for_category(3)
-      @radical_inclusivity_average = @show_video.get_average_rating_for_category(4)
-      @civic_responsibility_average = @show_video.get_average_rating_for_category(5)
-      @immediacy_average = @show_video.get_average_rating_for_category(6)
+
+      @category_averages = []
+
+      @categories.each do |category|
+        @category_averages[category.id] = @show_video.get_average_rating_for_category(category.id)
+      end
+
+        # @production_quality_average = @show_video.get_average_rating_for_category(1)
+     # @radical_creativity_average = @show_video.get_average_rating_for_category(2)
+     # @communal_effort_average = @show_video.get_average_rating_for_category(3)
+     # @radical_inclusivity_average = @show_video.get_average_rating_for_category(4)
+     # @civic_responsibility_average = @show_video.get_average_rating_for_category(5)
+     # @immediacy_average = @show_video.get_average_rating_for_category(6)
     else
       redirect_to videos_path
     end

@@ -19,12 +19,22 @@ class StaticPagesController < ApplicationController
     @feature = Video.find_by_feature(true)
     @video = Video.new
 
-    @radical_creativity = Category.find(2).averages.limit(20).order('average DESC')
-    @production_quality = Category.find(1).averages.limit(20).order('average DESC')
-    @radical_inclusivity = Category.find(4).averages.limit(20).order('average DESC')
-    @communal_effort = Category.find(3).averages.limit(20).order('average DESC')
-    @civic_responsibility = Category.find(5).averages.limit(20).order('average DESC')
-    @immediacy = Category.find(6).averages.limit(20).order('average DESC')
+    @categories = Category.all.order('sort_order ASC')
+    @category_videos = []
+    @category_video_ids = []
+    @categories.each do |category|
+      @items = Category.find(category.id).averages.limit(20).order('average DESC')
+      @category_videos[category.id] = @items
+      @items.each do |item|
+        @category_video_ids[item.video_id] = item.video_id
+      end
+
+    end
+    @videos_by_id = []
+    @videos_merge = Video.find_all_by_id(@category_video_ids)
+    @videos_merge.each do |video|
+      @videos_by_id[video.id] = video
+    end
     render :home
   end
 

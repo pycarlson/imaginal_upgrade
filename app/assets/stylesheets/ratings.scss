@@ -54,14 +54,22 @@ div.stars {
   }
 }
 
+.stars1 .colorBoxAverage { background-color: #C7B500; }
+.stars2 .colorBoxAverage { background-color: #A02FD3; }
+.stars3 .colorBoxAverage { background-color: #106DE3; }
+.stars4 .colorBoxAverage { background-color: #55BC00; }
+.stars5 .colorBoxAverage { background-color: #D62806; }
+.stars6 .colorBoxAverage { background-color: #D85D00; }
+
 .notice {
   margin: 0;  
 }
 
 .add-stars-box {
-  padding-top: 20px;
+  padding-top: 10px;
   clear: both;
-
+  float: left;
+  width: 620px;
   h5 {
     font-size: 15px;
     font-weight: 300;
@@ -89,7 +97,8 @@ div.stars {
   
   .cat {
     margin-bottom: 10px;
-    width: $fullSpan;
+    width: 50%;
+    float: left;
     display: table;
   }
 }

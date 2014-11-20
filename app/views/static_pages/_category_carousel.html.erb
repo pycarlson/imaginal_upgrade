@@ -1,0 +1,38 @@
+<div class="row-fluid">
+  <div class="carousel slide" id="category_<%=category.id %>_carousel">
+    <h2><%=category.name %><span>TOP 20</span></h2><br>
+    <div class="carousel-inner">
+
+        <% per_page = 4 %>
+        <% index = 0 %>
+        <% total = 0 %>
+        <% videos.each do |video| %>
+          <% if index == 0 %>
+            <% if total != 0 %>
+              <%= '</ul></div>'.html_safe %>
+            <% end %>
+            <div class="item<% if total == 0 %> active<% end %>"><ul class="thumbnails">
+          <% end %>
+
+          <li class="span3">
+            <div class="thumbnail">
+              <% vid = Video.find(@civic_responsibility[19].video_id) %>
+              <%= link_to image_tag(vid.thumbnail), video_path(vid) %>
+            </div>
+            <div class="caption"><%= link_to (truncate(video.title, length: 50)), video_path(vid) %></div>
+          </li>
+
+          <% index = index + 1 %>
+          <% total = total + 1 %>
+
+          <% if index == per_page %>
+            <% index = 0 %>
+
+          <% end %>
+        <% end %>
+        </ul></div>
+    </div>
+    <a data-slide="prev" href="#category_<%=category.id %>_carousel" class="left carousel-control"><img src="../assets/left-arrow.png"></a>
+    <a data-slide="next" href="#category_<%=category.id %>_carousel" class="right carousel-control"><img src="../assets/right-arrow.png"></a>
+  </div>
+</div>

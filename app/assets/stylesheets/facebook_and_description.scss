@@ -5,13 +5,15 @@
 }
 
 #fb-image img {
-  float: right;
   position: relative;
-  margin-top: -28px;
   width: 260px;
-  float: left;
   border-radius: 3px;
   z-index: 1;
+}
+
+.full-share {
+  float: right;
+  margin-top: 40px;
 }
 
 .description {

@@ -28,9 +28,12 @@ user.videos << Video.create(title: "The Art of Happiness", description: "This is
 
 user = User.create(email: "aducker@hotmail.com", password: "password", password_confirmation: "password", admin: true)
 
-["Production Quality", "Radical Creativity", "Communal Effort", "Radical Inclusivity", "Civic Responsibility", "Immediacy"].each do |category|
-  Category.create(name: category)
-end
+Category.create(name: "Production Quality", description: "We value attention to detail, and care for final the product. We honor the work that has been carefully and lovingly produced. We celebrate those who demonstrate this kind of care and commitment to quality.", alternates: '', sort_order: 1)
+Category.create(name: "Radical Creativity", description: "We celebrate those who step beyond the vulnerabilities of being exposed, and expressing their unique gifts to the world. We honor who inspire us to radically express our own selves.", alternates: '', sort_order: 2)
+Category.create(name: "Communal Effort", description: "We value creative cooperation and collaboration. We celebrate those who demonstrate to us the power of coming together. We honor the work that requires communal effort to produce.", alternates: '', sort_order: 3)
+Category.create(name: "Radical Inclusivity", description: "No matter what, we welcome the stranger. There is no contrast or quality by which we choose to exclude others. We enter into a global family that transcends any identifier, and we celebrate the media and heroes that demonstrate that quality.", alternates: '', sort_order: 4)
+Category.create(name: "Civic Responsibility", description: "We value civil society. We celebrate those who that demonstrate the individual or collective capacity to benefit our community. Whether local, regional, national, and international community we honor the ethic of responsibility to others.", alternates: '', sort_order: 5)
+Category.create(name: "Immediacy", description: "We seek to overcome barriers that stand between us and a recognition of our inner selves, the reality of those around us, participation in society, and contact with a natural world exceeding human powers. We celebrate those who take us beyond those barriers.", alternates: '', sort_order: 6)
 
 rating = Rating.create(video_id: 1, category_id: 1, num_stars: (1+rand(5)))
 Average.update(rating)
