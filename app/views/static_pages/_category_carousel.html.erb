@@ -6,7 +6,7 @@
         <% per_page = 4 %>
         <% index = 0 %>
         <% total = 0 %>
-        <% videos.each do |video| %>
+        <% category_videos.each do |category_video| %>
           <% if index == 0 %>
             <% if total != 0 %>
               <%= '</ul></div>'.html_safe %>
@@ -16,10 +16,10 @@
 
           <li class="span3">
             <div class="thumbnail">
-              <% vid = Video.find(@civic_responsibility[19].video_id) %>
-              <%= link_to image_tag(vid.thumbnail), video_path(vid) %>
+              <% video = videos[category_video.video_id] %>
+              <%= link_to image_tag(video.thumbnail), video_path(video) %>
             </div>
-            <div class="caption"><%= link_to (truncate(video.title, length: 50)), video_path(vid) %></div>
+            <div class="caption"><%= link_to (truncate(video.title, length: 50)), video_path(video) %></div>
           </li>
 
           <% index = index + 1 %>
