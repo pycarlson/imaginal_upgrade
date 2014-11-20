@@ -29,6 +29,7 @@
   <% end %>
 
   <%= render "shared/top_nav" %>
+
   <div id="nav-border"></div>
 
     <% if flash[:alert] %>
@@ -51,6 +52,8 @@
   }(document, 'script', 'facebook-jssdk'));</script>
 
   <%= yield %>
+
+  <%= render 'shared/forms' %>
 
 </body>
 </html>

@@ -14,12 +14,10 @@
     </div>
   </div>
 
-  <%= render 'videos/form' %>
-
   <div class="carousel-footer">
 
       <% @categories.each_with_index do |category, index| %>
-        <%= render 'category_carousel', category: category, category_videos: @category_videos[category.id], videos: @videos_by_id %>
+        <%= render 'shared/carousel', title: category.name, subtitle: "TOP 20", id: index, videos: @carousel_videos[category.id] %>
       <% end %>
 
   </div>

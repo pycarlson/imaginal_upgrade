@@ -121,9 +121,7 @@
     <div class="fb-comments" data-href="http://imaginal.media/videos/<%= @show_video.id %>" data-width="900" data-numposts="5" data-colorscheme="dark"></div>
 </div>
 
-<%= render 'form' %>
-
 <div class="carousel-footer">
-  <%= render 'show_page_carousel' %>  
+    <%= render 'shared/carousel', title: "More Videos", subtitle: "", id: 1, videos: @small_vids %>
 </div>
 

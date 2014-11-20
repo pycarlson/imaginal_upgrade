@@ -19,6 +19,7 @@ class StaticPagesController < ApplicationController
     @feature = Video.find_by_feature(true)
     @video = Video.new
 
+    # first we get the average items
     @categories = Category.all.order('sort_order ASC')
     @category_videos = []
     @category_video_ids = []
@@ -28,13 +29,26 @@ class StaticPagesController < ApplicationController
       @items.each do |item|
         @category_video_ids[item.video_id] = item.video_id
       end
-
     end
+
+    # then we get all the videos for those IDs
     @videos_by_id = []
-    @videos_merge = Video.find_all_by_id(@category_video_ids)
-    @videos_merge.each do |video|
+    @videos = Video.find_all_by_id(@category_video_ids)
+    @videos.each do |video|
       @videos_by_id[video.id] = video
     end
+
+    # now we sort the videos back in by category so they're ready for our carousel
+    @carousel_videos = []
+    @categories.each do |category|
+      @items = @category_videos[category.id]
+      @videos = []
+      @items.each do |item|
+        @videos.push(@videos_by_id[item.video_id])
+      end
+      @carousel_videos[category.id] = @videos
+    end
+
     render :home
   end
 

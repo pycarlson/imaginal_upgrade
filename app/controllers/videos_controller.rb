@@ -41,7 +41,7 @@ class VideosController < ApplicationController
   end
 
   def new
-    @video = Video.new
+    redirect_to videos_path
   end
 
   def create
@@ -72,6 +72,7 @@ class VideosController < ApplicationController
   end
 
   def edit
+    redirect_to videos_path
   end
 
   def update
