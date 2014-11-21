@@ -11,9 +11,19 @@ class TagsController < ApplicationController
     #    :description => 'A Ruby wrapper for Facebook Graph API'
     #)
 
-    @tag = Tag.find_by_name(params[:id])
+    @page_title = "Videos tagged by " + params[:id]
+
+    @tag_name = params[:id]
+
+    @tag = Tag.find_by_name(@tag_name)
+
+    if @tag
+      @videos = Video.tagged_with(@tag_name).order('id DESC').page params[:page]
+    else
+      @videos = []
+    end
     @video = Video.new
-    @videos = Video.tagged_with(@tag.name).order('id DESC').page params[:page]
+
   end
 
 end

@@ -6,10 +6,13 @@ class VideosController < ApplicationController
   
   def index
     if params[:search]
+      @page_title = "Search - " + params[:search]
       @videos = Video.search(params[:search]).where(temporary_owner: '').order('overall_rating DESC').page params[:page]
     else
+      @page_title = "All Videos"
       @videos  = Video.where(temporary_owner: '').order('overall_rating DESC').page params[:page]
     end
+
     @video = Video.new
   end
 
@@ -18,6 +21,8 @@ class VideosController < ApplicationController
     @show_video = Video.find_by(temporary_owner: '', id: params[:id])
 
     if @show_video
+
+      @page_title = @show_video.title
 
       @show_video.update_attribute(:plays, @show_video.plays + 1)
       #@show_video_user = User.find(@show_video.user_id)

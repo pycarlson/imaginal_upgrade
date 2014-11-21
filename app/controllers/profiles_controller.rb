@@ -4,6 +4,13 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
+
+    if current_user && current_user.id == @profile.user.id
+      @page_title = "My Videos"
+    else
+      @page_title = "Videos From " + @profile.user.name
+    end
+
     @video = Video.new
     @videos = @profile.user.videos.order('id DESC').page params[:page]
   end

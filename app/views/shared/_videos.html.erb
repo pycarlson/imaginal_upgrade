@@ -26,9 +26,12 @@
         </li>
       <% end %>
     </ul>
+
+    <%= paginate @videos %>
+
   <% else %>
     <div class="none-found"><p>No videos found</p></div>
   <% end %>
 </div>
 
-<%= paginate @videos %>
+

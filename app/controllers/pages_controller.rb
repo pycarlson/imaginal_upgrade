@@ -55,7 +55,7 @@ class PagesController < ApplicationController
   def show
     @page = Page.find_by_slug(params[:id])
     if @page
-
+      @page_title = @page.title
       @content = MarkdownService.new.render(@page.content).html_safe
 
       @video = Video.new
