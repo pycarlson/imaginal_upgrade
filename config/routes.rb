@@ -1,13 +1,12 @@
 ImaginalUpgrade::Application.routes.draw do
 
-  #devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  match 'users/sign_in' => 'static_pages#home', via: 'get'
+  match 'users/sign_in' => 'pages#home', via: 'get'
 
   devise_for :users, :skip => [:registrations, :passwords], :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
-  root :to => "static_pages#home"
+  root :to => "pages#home"
 
   get 'profiles/:id/:name', :to => 'profiles#show'
   resources :profiles, only: [:show]
@@ -19,14 +18,10 @@ ImaginalUpgrade::Application.routes.draw do
   resources :videos
 
   resources :categories
-
   resources :tags
-
-  get '/about' => 'static_pages#about', :as => :about
-  # get '/ratings/add_rating' => 'ratings#add_rating', :as => :add_rating
 
   match '/add_rating' => 'ratings#add_rating', via: 'post'
 
-
+  get '/:id', to: 'pages#show'
 
 end

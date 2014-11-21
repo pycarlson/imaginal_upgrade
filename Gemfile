@@ -26,6 +26,8 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'fb_graph'
+gem 'redcarpet',    '3.1.1'
+gem 'rouge',        '1.3.3'
 
 group :development do
   gem 'sqlite3'

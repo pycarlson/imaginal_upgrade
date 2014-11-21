@@ -1,4 +1,4 @@
-class StaticPagesController < ApplicationController 
+class PagesController < ApplicationController
   
   def home
 
@@ -52,7 +52,16 @@ class StaticPagesController < ApplicationController
     render :home
   end
 
-  def about
+  def show
+    @page = Page.find_by_slug(params[:id])
+    if @page
+
+      @content = MarkdownService.new.render(@page.content).html_safe
+
+      @video = Video.new
+    else
+      redirect_to root_path
+    end
   end
 
 end

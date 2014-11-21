@@ -82,3 +82,18 @@
   width: $fullSpan;
   background-image: url(/assets/keystroke-rainbow.png);
 }
+
+.footer {
+
+  text-align: center;
+
+  li {
+    display: inline-block;
+    padding: 0 10px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #FFF;
+  }
+}
