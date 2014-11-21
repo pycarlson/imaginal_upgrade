@@ -8,12 +8,12 @@ function setPreference(name, value) {
 
 function initCategoryPreferenceModal(element) {
 
-    var name = $(element).attr('id');
-    var value = $(element).html();
+    var name = $(element).parent().parent().attr('id');
+    var value = $.trim($(element).html());
 
     console.log(value);
 
-    var alternates =    $('#' + name + "-alternates").html().split(',');
+    var alternates = $(element).data('alternates').split(',');
 
     var html = "";
     for(var i = 0; i < alternates.length; i++) {
@@ -46,10 +46,12 @@ $(document).ready(function() {
         setPreference(name, value);
 
         if(value == '') {
-            value =  $('#' + name + '-default').html();
+            value =  $('#' + name + ' h5').data('default');
         }
 
-        $('#' + name).html(value);
+        $('#' + name + ' h5').html(value);
+
+        $('#' + name + ' .star a').data('name', value);
 
         $('#category-preference-form').modal('hide');
         return false;

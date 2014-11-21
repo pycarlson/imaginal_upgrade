@@ -92,7 +92,6 @@
                     </div>
                     <div class="modal-body">
                         <%= form_for :video, method: :put do |f| %>
-                            <%= f.hidden_field :feature, :value => @show_video.feature %>
                             <h2>TAGS</h2>
                             <h5>Tags separated by commas.</h5>
                             <%= f.text_field :tag_list, :value => @show_video.tag_list %>
@@ -140,7 +139,7 @@
                     </div>
                     <div class="modal-body">
                         <%= form_for :video, method: :put do |f| %>
-                            <%= f.hidden_field :feature, :value => @show_video.feature %>
+
                             <h2>TITLE</h2>
                             <h5>Give the video a snazzy title that makes people curious, e.g. "How to Start a Movement in 3 Minutes"</h5>
                             <%= f.text_field :title, :size => "80x40", required: :true, :autofocus => true, remote: true, :value => @show_video.title %>

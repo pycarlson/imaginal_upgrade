@@ -54,17 +54,18 @@
       
       <div id="star-brand"><h2>Vote. Share. Change the World.</h2></div>
         <% @categories.each_with_index do |category, index| %>
-          <div class="cat">
-            <div tooltip="<%= category.description %>" class="tooltip<%=index+1 %>"><h5 id="category-<%=category.id %>"><%= user_preference('category-' + category.id.to_s, category.name) %></h5></div>
-              <div class="hidden" id="category-<%=category.id %>-default"><%=category.name %></div>
-            <div class="hidden" id="category-<%=category.id %>-alternates"><%=category.name %><% if category.alternates != '' %>, <%=category.alternates %><% end %></div>
+          <div class="cat" id="category-<%=category.id %>" >
+            <div tooltip="<%= category.description %>" class="tooltip<%=index+1 %>">
+              <h5 data-default="<%=category.name %>" data-alternates="<%=category.name %><% if category.alternates != '' %>, <%=category.alternates %><% end %>">
+                <%= user_preference('category-' + category.id.to_s, category.name) %></h5>
+            </div>
             <div class="stars stars<%=index+1 %>" data-avg="<%= @category_averages[category.id] %>" >
               <div class="starbox">
                 <div class="colorBoxAverage"></div>
                 <div class="colorBoxInteraction"></div>
                 <ul>
                     <% 1.upto(5) do |i| %>
-                      <li class="star"><%= link_to image_tag("../assets/bigger-star-from-Jeff.png"), add_rating_path(@rating, num_stars: i, video_id: @show_video.id, category_id: category.id), data: {:name => category.name, :rating => i, :rated => Rating.previous_rating_found?(@show_video.id, category.id, request.remote_ip) } %></li>
+                      <li class="star"><%= link_to image_tag("../assets/bigger-star-from-Jeff.png"), add_rating_path(@rating, num_stars: i, video_id: @show_video.id, category_id: category.id), data: {:name => user_preference('category-' + category.id.to_s, category.name), :rating => i, :rated => Rating.previous_rating_found?(@show_video.id, category.id, request.remote_ip) } %></li>
                     <% end %>
                 </ul>
               </div>
