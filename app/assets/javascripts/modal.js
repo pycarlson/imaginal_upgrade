@@ -16,7 +16,7 @@ $(document).ready(function(){
   });
 
   $('.modal-footer input').click(function() {
-     console.log('click');
+     //console.log('click');
   });
 
 });

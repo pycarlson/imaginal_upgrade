@@ -15,7 +15,7 @@
   <div class="carousel-footer">
 
       <% @categories.each_with_index do |category, index| %>
-        <%= render 'shared/carousel', title: category.name, subtitle: "TOP 20", id: index, videos: @carousel_videos[category.id] %>
+        <%= render 'shared/carousel', title: user_preference('category-' + category.id.to_s, category.name), subtitle: "TOP 20", id: index, videos: @carousel_videos[category.id] %>
       <% end %>
 
   </div>

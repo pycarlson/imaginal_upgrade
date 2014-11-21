@@ -36,6 +36,43 @@
 
 <% if current_user %>
 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.cat h5').click(function() {
+                initCategoryPreferenceModal(this);
+            });
+        });
+    </script>
+
+    <!-- Modal -->
+    <div class="modal fade submit-vid-form" id="category-preference-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h1>Rename this category</h1>
+                    <p>You can choose to name this category something else.</p>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="post" class="category-preference-form">
+
+                        <h2>OPTIONS</h2>
+
+                        <input type="hidden" id="category-preference-form-name" value="">
+
+                        <select name="options" id="category-preference-form-value">
+                            <option value="test">Test</option>
+                        </select>
+
+                        <div class="modal-footer">
+                            <input name="commit" type="submit" value="Save">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <% if @show_video && (flash[:new] || params[:new]) && (@show_video.user_id == current_user.id || current_user.is_admin?) %>
 
         <script type="text/javascript">
@@ -70,6 +107,8 @@
     <% end %>
 
     <% if @show_video && (@show_video.user_id == current_user.id || current_user.is_admin?) %>
+
+
 
         <!-- Modal -->
         <div class="modal fade submit-vid-form" id="delete-vid-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

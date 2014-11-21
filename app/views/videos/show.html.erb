@@ -55,7 +55,9 @@
       <div id="star-brand"><h2>Vote. Share. Change the World.</h2></div>
         <% @categories.each_with_index do |category, index| %>
           <div class="cat">
-            <div tooltip="<%= category.description %>" class="tooltip<%=index+1 %>"><h5><%= category.name %></h5></div>
+            <div tooltip="<%= category.description %>" class="tooltip<%=index+1 %>"><h5 id="category-<%=category.id %>"><%= user_preference('category-' + category.id.to_s, category.name) %></h5></div>
+              <div class="hidden" id="category-<%=category.id %>-default"><%=category.name %></div>
+            <div class="hidden" id="category-<%=category.id %>-alternates"><%=category.name %><% if category.alternates != '' %>, <%=category.alternates %><% end %></div>
             <div class="stars stars<%=index+1 %>" data-avg="<%= @category_averages[category.id] %>" >
               <div class="starbox">
                 <div class="colorBoxAverage"></div>

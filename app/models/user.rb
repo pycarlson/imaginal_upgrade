@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :videos, :dependent => :destroy
   has_one :profile, :dependent => :destroy
+  has_many :preferences, :dependent => :destroy
 
   after_create  :build_profile
 

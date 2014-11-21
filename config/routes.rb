@@ -22,6 +22,8 @@ ImaginalUpgrade::Application.routes.draw do
 
   match '/add_rating' => 'ratings#add_rating', via: 'post'
 
+  match '/set_preference' => 'preferences#set_preference', via: 'post'
+
   get '/:id', to: 'pages#show'
 
 end
