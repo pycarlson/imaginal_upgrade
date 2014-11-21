@@ -92,7 +92,7 @@ class VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit(:link, :title, :url, :description, :feature, :tag_list)
+    params.require(:video).permit(:link, :title, :url, :description, :feature, :tag_list, :post_to_facebook)
   end
 
   def update_click_count

@@ -15,7 +15,12 @@
                     <%= f.text_field :url, :size => "80x40", placeholder: 'http://', required: :true %>
                     <h2>DESCRIPTION</h2>
                     <h5>Tell us how this video impacted you and why it matters.</h5>
-                    <%= f.text_area :description, :size => "81x4", :rows => 3, required: :true %><br>
+                    <%= f.text_area :description, :size => "81x4", :rows => 3, required: :true %>
+                    <h2>Share With Your Friends</h2>
+                    <label><%= f.check_box :post_to_facebook, checked: 'checked' %> Post this to my Facebook feed</label>
+
+                    <br>
+
                     <div class="modal-footer">
                         <% if current_user %>
                             <%= f.submit "Done" %>
