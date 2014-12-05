@@ -30,6 +30,21 @@
         <% end %>
         </ul></div>
     </div>
+
+    <div class="carousel-mobile">
+      <ul class="thumbnails">
+        <% videos.each do |video| %>
+
+          <li class="span3">
+              <div class="thumbnail">
+                  <%= link_to image_tag(video.thumbnail), video_path(video) %>
+              </div>
+              <div class="caption"><%= link_to (truncate(video.title, length: 50)), video_path(video) %></div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
     <a data-slide="prev" href="#carousel_<%=id %>" class="left carousel-control"><img src="/assets/left-arrow.png"></a>
     <a data-slide="next" href="#carousel_<%=id %>" class="right carousel-control"><img src="/assets/right-arrow.png"></a>
   </div>

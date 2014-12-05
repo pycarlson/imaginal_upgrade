@@ -24,3 +24,89 @@
        url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
+@media screen and (max-width: 1120px) {
+    .carousel-footer, .carousel.slide {
+        width: 800px;
+    }
+    ul.thumbnails {
+        width: 870px;
+    }
+    ul.thumbnails li {
+        width: 202px;
+        position: relative;
+        padding-right: 8px;
+    }
+
+    .carousel div.thumbnail img {
+        top: -40px;
+        width: 120%;
+        left: -10%;
+        max-width: 200%;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .carousel-footer, .carousel.slide {
+        width: 700px;
+    }
+    ul.thumbnails {
+        width: 770px;
+    }
+    ul.thumbnails li {
+        width: 172px;
+    }
+
+    .feature-home-container, .feature-home-container .vid-link,  .feature-home-container iframe {
+        width: 100%;
+    }
+    .carousel div.thumbnail img {
+        top: -40px;
+        width: 140%;
+        left: -20%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        width: auto;
+    }
+    .carousel-footer, .carousel.slide {
+        width: 600px;
+    }
+    ul.thumbnails {
+        width: 670px;
+    }
+    ul.thumbnails li {
+        width: 150px;
+    }
+
+    .carousel div.thumbnail img {
+        top: -40px;
+        width: 160%;
+        left: -30%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .carousel-footer, .carousel.slide {
+        width: 100%;
+        padding: 0;
+    }
+
+    .carousel-control, .carousel-inner {
+        display: none;
+    }
+
+    ul.thumbnails {
+        width: auto;
+        height: auto;
+    }
+    .carousel-mobile {
+        display: block;
+    }
+    .carousel.slide li {
+        height: 155px;
+    }
+}

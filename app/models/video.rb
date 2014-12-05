@@ -67,9 +67,9 @@ class Video < ActiveRecord::Base
 
   def thumbnail
     if self.provider == 'vimeo'
-      thumbnail = "https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?url=https%3A%2F%2Fres.cloudinary.com%2Fdemo%2Fimage%2Fvimeo%2F#{self.provider_id}.jpg&container=focus&resize_h=220&refresh=2592000"
+      thumbnail = "https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?url=https%3A%2F%2Fres.cloudinary.com%2Fdemo%2Fimage%2Fvimeo%2F#{self.provider_id}.jpg&container=focus&resize_h=220&rsize_w=220&refresh=2592000"
     elsif self.provider == 'youtube'
-      thumbnail = "https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?url=https%3A%2F%2Fimg.youtube.com%2Fvi%2F#{self.provider_id}%2F0.jpg&container=focus&resize_h=220&refresh=2592000"
+      thumbnail = "https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?url=https%3A%2F%2Fimg.youtube.com%2Fvi%2F#{self.provider_id}%2F0.jpg&container=focus&resize_h=220&resize_w=220&refresh=2592000"
     end
   end
 
