@@ -149,13 +149,17 @@
 
 
 @media screen and (max-width: 768px) {
-
-
     .navbar-brand {
         left: 15px;
         position: relative;
     }
+    .modal.fade .modal-dialog {
+        margin-top: 0;
+    }
 
+    .submit-vid-form .modal-content, .edit-vid-form .modal-content {
+        max-width: 100%;
+    }
 
 }
 

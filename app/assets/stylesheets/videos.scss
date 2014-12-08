@@ -166,7 +166,7 @@ div.average-rating {
     float: left;
 
     form {
-      padding: 20px;
+      padding: 20px 20px 40px 20px;
       input {
         width: 100%;
       }
@@ -183,6 +183,11 @@ div.average-rating {
     }
   }
 
+}
+
+.pagination {
+  float: left;
+  margin-left: 0;
 }
 
 .modal-header p {

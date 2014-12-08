@@ -16,11 +16,15 @@
                 playerStart();
             });
 
-            $('.finished-popup').width($('#player').width()).height($('#player').height());
+            $('.finished-popup').width($('#player').width()).css('min-height', $('#player').height());
             $('#player').hide();
             $('.finished-popup').show();
 
           }
+          $(window).resize(function() {
+            $('.finished-popup').width($('#player').width()).css('min-height', $('#player').height());
+          });
+
         </script>
 
         <% if flash[:new] || params[:new] %>
