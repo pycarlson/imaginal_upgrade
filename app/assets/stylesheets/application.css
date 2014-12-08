@@ -74,6 +74,15 @@
         padding-right: 7px;
     }
 
+    .description {
+        width: 100%;
+    }
+    .full-share {
+        float: none;
+        width: 100%;
+        padding: 20px 0;
+        clear: both;
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -95,6 +104,7 @@
         width: 160%;
         left: -30%;
     }
+
 }
 
 @media screen and (max-width: 800px) {
@@ -119,6 +129,21 @@
         height: 135px;
         overflow: hidden;
     }
+
+    .add-stars-box {
+        width: 100%;
+    }
+
+    .add-stars-box .cat {
+        width: 300px;
+        float: none;
+    }
+
+    .add-stars-box h5 {
+        font-size: 14px;
+        width: 150px;
+    }
+
 }
 
 
@@ -142,5 +167,16 @@
     }
     .caption a {
         font-size: 12px;
+    }
+
+    .add-stars-box .cat {
+        width: 280px;
+        float: none;
+    }
+
+
+    .add-stars-box h5 {
+        font-size: 10px;
+        width: 120px;
     }
 }
