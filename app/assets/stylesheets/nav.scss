@@ -5,31 +5,51 @@
   top: 0;
   background-image: url(/assets/header.png);
   margin: 0;
-  height: 60px;
+  min-height: 60px;
   padding: 0;
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 
-  .inner-nav {
-    width: $main;
-    margin: 0 auto;
+  .container {
+    min-height: 1px;
+    padding: 0 15px;
+    .navbar-brand {
+      margin: 0;
+      padding: 0;
+    }
   }
 
-  .logo {
-    float: left;
-  }
-
-  ul {
+  #navbar {
     margin: 0;
     padding: 0;
+    &.in, &.collapsing {
+
+      .to-sub-vid-modal a {
+        float: right;
+      }
+
+      ul {
+        margin: 0;
+        padding: 10px 0;
+        text-align: right;
+      }
+      li {
+        left: 0;
+        a {
+          padding: 0 0 10px 0;
+          margin: 0;
+
+        }
+      }
+    }
   }
 
-  .to-sub-vid-modal a, .get-signed-in a {
+  .to-sub-vid-modal a {
     width: 145px;
     height: 48px;
     background: url(/assets/button-submit.png) no-repeat;
     z-index: 1;
-    float: right;
-    margin-left: 30px;
+    padding: 0;
+    margin-left: 0;
     margin-top: 6px;
 
     &:hover {
@@ -37,14 +57,9 @@
     }
   }
 
-  .nav-right {
-    float: right;
-    margin-top: 20px;
-
-    a {
+  .navbar-nav > li > a {
       color: $paleMauve;
-      margin-left: 30px;
-      padding-top: 30px;
+      padding-top: 20px;
       text-decoration: none;
       font-size: 12px;
       letter-spacing: .1em;
@@ -54,16 +69,6 @@
         color: $brightGreen;
       }
     }
-  }
-
-  .nav-left {
-    float: left;
-
-    li {
-      display: inline;
-      list-style: none;
-    }
-  }
 
   .thumb {
     position: relative;
@@ -84,7 +89,7 @@
 }
 
 .footer {
-
+  clear: both;
   text-align: center;
 
   li {

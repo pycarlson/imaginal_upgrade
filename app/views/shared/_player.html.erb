@@ -1,16 +1,32 @@
+<div id="player"></div>
+
 <script type="text/javascript">
+
 
   var source_width = '<%=video.video_width %>';
   var source_height = '<%=video.video_height %>';
 
   var ratio = source_width / source_height;
 
-  var width = 900;
+  var width = $('#player').parent().width();
   var height = Math.round(width / ratio);
 
-</script>
 
-<div id="player"></div>
+  function resize_player() {
+
+    var width = $('#player').parent().width();
+    var height = Math.round(width / ratio);
+
+    $('#player').width(width).height(height);
+
+  }
+
+  $(window).resize(function() {
+    resize_player();
+  })
+
+
+</script>
 
 <% if video.provider == 'youtube' %>
 
@@ -51,6 +67,14 @@
         }
       }
     }
+
+
+    resize_player();
+
+    $(window).resize(function() {
+      resize_player();
+    })
+
 
   </script>
 

@@ -65,7 +65,8 @@ p {
 }
 
 .container {
-  width: $main;
+  max-width: 930px;
+  width: 100%;
   margin: 0 auto;
   min-height: 600px;
   padding-bottom: 10px;
@@ -99,7 +100,6 @@ p {
 .feature-home-container {
   margin-top: 30px;
   padding-bottom: 30px;
-  width: $main;
   margin: 0 auto;
 
   h2 {
@@ -118,6 +118,7 @@ p {
 }
 
 .vid-link {
+  width: 100%;
 }
 
 .alert, .notice {

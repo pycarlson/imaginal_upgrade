@@ -55,7 +55,8 @@ div.average-rating {
 .search-form-container {
   height: 140px;
   margin: 0 auto;
-  width: $main;
+  max-width: $main;
+  width: 100%;
   padding-top: 30px;
   padding-bottom: 60px;
 
@@ -71,7 +72,8 @@ div.average-rating {
 
 .add-vids-container {
   clear: both;
-  width: $main;
+  max-width: $main;
+  width: 100%;
   margin: 0 auto;
   margin-left: -20px;
   padding-bottom: 60px;
@@ -109,6 +111,7 @@ div.average-rating {
     height: 150px;
     margin-right: 0;
     overflow: hidden;
+    border: 1px solid red;
     position: relative;
 
     span {
@@ -126,14 +129,15 @@ div.average-rating {
         text-decoration: none;
       }
       img {
-        top: -35px;
+        top: -50%;
         position: relative;
-        left: -35px;
+        width: 200%;
+        left: -25%;
       }
   }
 
   ul {
-    width: $main;
+    width: 100%;
     margin-left: 0;
   }
 }
