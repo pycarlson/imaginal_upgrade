@@ -65,5 +65,4 @@ ActiveAdmin.register Video do
     end
   end
 
-
 end

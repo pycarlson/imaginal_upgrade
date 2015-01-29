@@ -4,7 +4,7 @@ class Video < ActiveRecord::Base
   has_many :ratings, :dependent => :destroy
   has_many :averages, :dependent => :destroy
 
-  before_save :get_video_attributes
+  before_create :get_video_attributes
 
   #before_save :parse_video_url, :get_video_thumbnail_link
   validates :title, :description, :url, :presence => true

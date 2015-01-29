@@ -150,13 +150,14 @@ div.average-rating {
   overflow: hidden;
   position: relative;
   float: left;
+  width: 100%;
   #player {
     z-index: 1;
     position: relative;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     border: 0;
-    float: left;
+    display: block;
   }
   .finished-popup {
     display: none;

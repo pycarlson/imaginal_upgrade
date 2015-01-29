@@ -30,7 +30,7 @@
         <% if flash[:new] || params[:new] %>
             <% autoplay = false %>
         <% else %>
-            <% autoplay = true %>
+            <% autoplay = false %>
         <% end %>
 
         <%= render "shared/player", video: @show_video, autoplay: autoplay %>
@@ -118,7 +118,7 @@
 
    <div id="facebook-popup">
     <%= link_to image_tag("../assets/x-mark.jpg", :class => "close-popup") %>
-    <div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-width="300" data-height="300" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+    <div class="fb-like-box" data-href="https://www.facebook.com/imaginal.media" data-width="300" data-height="300" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
   </div>
 
   <div class="facebook-comments"></div>
@@ -129,7 +129,7 @@
 
 
   <div class="carousel-footer">
-      <%= render 'shared/carousel', title: "More Videos", subtitle: "", id: 1, videos: @small_vids %>
+      <%= render 'shared/carousel', title: "More Videos", subtitle: "", id: 1, videos: @small_vids, category: nil %>
   </div>
 
 
