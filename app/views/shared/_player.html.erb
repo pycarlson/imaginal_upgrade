@@ -1,16 +1,68 @@
+<div id="player"></div>
+
 <script type="text/javascript">
+
 
   var source_width = '<%=video.video_width %>';
   var source_height = '<%=video.video_height %>';
 
   var ratio = source_width / source_height;
 
-  var width = 900;
+  var width = $('#player').parent().width();
   var height = Math.round(width / ratio);
 
-</script>
 
-<div id="player"></div>
+
+  var height = 510;
+  if (height > source_height) {
+    //height = source_height;
+  }
+
+
+  var width = Math.round(height * ratio);
+
+
+  function resize_player() {
+
+    var max_width = $('#player').parent().width();
+
+
+
+    var height = 510;
+    if (height > source_height) {
+    //  height = source_height;
+    }
+
+
+    var width = Math.round(height * ratio);
+
+    if(width > max_width) {
+      width = $('#player').parent().width();
+      height = Math.round(width / ratio);
+    }
+
+    $('#player').width(width).height(height);
+
+
+    //var width = $('#player').parent().width();
+    //var height = Math.round(width / ratio);
+
+    //$('#player').width(width).height(height);
+
+
+    //var width = $('#player').parent().width();
+    //var height = Math.round(width / ratio);
+
+    //$('#player').width(width).height(height);
+
+  }
+
+  $(window).resize(function() {
+   // resize_player();
+  })
+
+
+</script>
 
 <% if video.provider == 'youtube' %>
 
@@ -23,6 +75,11 @@
       player = new YT.Player('player', {
         height: height,
         width: width,
+        playerVars: {
+          controls: 0,
+          showinfo: 0,
+          iv_load_policy: 3
+        },
         videoId: '<%=video.provider_id %>',
         events: {
           'onReady': onPlayerReady,
@@ -52,12 +109,20 @@
       }
     }
 
+
+    resize_player();
+
+    $(window).resize(function() {
+      resize_player();
+    })
+
+
   </script>
 
 <% elsif video.provider == 'vimeo' %>
   <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
   <script type="text/javascript">
-    var html = '<iframe id="player-iframe" src="//player.vimeo.com/video/<%=video.provider_id %>?api=1&player_id=player-iframe<% if autoplay %>&autoplay=true<% end %>" width="' + width + '" height="' + height + '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+    var html = '<iframe id="player-iframe" src="//player.vimeo.com/video/<%=video.provider_id %>?api=1&player_id=player-iframe<% if autoplay %>&autoplay=true<% end %>&badge=0&byline=0&portrait=0&title=0" width="' + width + '" height="' + height + '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
     $('#player').html(html);
 
     $(document).ready(function() {

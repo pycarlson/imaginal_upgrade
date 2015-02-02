@@ -6,7 +6,7 @@
         <li>
           <div class="images">
             <%= link_to video_path(video) do %>
-              <%=image_tag(video.thumbnail) %>
+              <%=image_tag("/assets/empty.png", style: "background-image: url(" + video.thumbnail + ");") %>
               <span><%=truncate(video.title, length: 50) %></span>
             <% end %>
           </div>

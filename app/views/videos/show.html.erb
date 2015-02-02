@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="inner-container main-video">  
+  <div class="main-video">
     <h1><%= @show_video.title %>
       <% if current_user && (@show_video.user_id == current_user.id || current_user.is_admin?)  %>
         <a href="#" class="edit-video">Edit Video</a>
@@ -16,17 +16,21 @@
                 playerStart();
             });
 
-            $('.finished-popup').width($('#player').width()).height($('#player').height());
+            $('.finished-popup').width($('#player').width()).css('min-height', $('#player').height());
             $('#player').hide();
             $('.finished-popup').show();
 
           }
+          $(window).resize(function() {
+            $('.finished-popup').width($('#player').width()).css('min-height', $('#player').height());
+          });
+
         </script>
 
         <% if flash[:new] || params[:new] %>
             <% autoplay = false %>
         <% else %>
-            <% autoplay = true %>
+            <% autoplay = false %>
         <% end %>
 
         <%= render "shared/player", video: @show_video, autoplay: autoplay %>
@@ -108,23 +112,28 @@
     });
      </script>
    
+     </div>
    </div>
- </div>
 
- <div id="alert"></div>
- <div class="clearfix"></div>
+
+   <div id="facebook-popup">
+    <%= link_to image_tag("../assets/x-mark.jpg", :class => "close-popup") %>
+    <div class="fb-like-box" data-href="https://www.facebook.com/imaginal.media" data-width="300" data-height="300" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+  </div>
+
+  <div class="facebook-comments"></div>
+      <script type="text/javascript">
+        var width = $('.facebook-comments').width();
+        $('.facebook-comments').html('<div class="fb-comments" data-href="http://imaginal.media/videos/<%= @show_video.id %>" data-width="' + width + '" data-numposts="5" data-colorscheme="dark"></div>');
+      </script>
+
+
+  <div class="carousel-footer">
+      <%= render 'shared/carousel', title: "More Videos", subtitle: "", id: 1, videos: @small_vids, category: nil %>
+  </div>
+
+
+    <div id="alert"></div>
+
+
 </div>
-
- <div id="facebook-popup">
-  <%= link_to image_tag("../assets/x-mark.jpg", :class => "close-popup") %>
-  <div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-width="300" data-height="300" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
-</div>
-
-<div class="facebook-comments">
-    <div class="fb-comments" data-href="http://imaginal.media/videos/<%= @show_video.id %>" data-width="900" data-numposts="5" data-colorscheme="dark"></div>
-</div>
-
-<div class="carousel-footer">
-    <%= render 'shared/carousel', title: "More Videos", subtitle: "", id: 1, videos: @small_vids %>
-</div>
-

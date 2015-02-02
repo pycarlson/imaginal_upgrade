@@ -8,10 +8,17 @@ function setPreference(name, value) {
 
 function initCategoryPreferenceModal(element) {
 
-    var name = $(element).parent().parent().attr('id');
-    var value = $.trim($(element).html());
+    var name = $(element).data('id');
+    var value = $(element).data('value');
 
-    console.log(value);
+    if(!name) {
+        name = $(element).parent().parent().attr('id');
+        value = $.trim($(element).html());
+    }
+
+
+  //  console.log(name);
+   // console.log(value);
 
     var alternates = $(element).data('alternates').split(',');
 
@@ -32,7 +39,6 @@ function initCategoryPreferenceModal(element) {
     }
 
     $('#category-preference-form-value').html(html);
-
     $('#category-preference-form-name').val(name);
     $('#category-preference-form').modal('show');
 }
@@ -45,13 +51,21 @@ $(document).ready(function() {
 
         setPreference(name, value);
 
-        if(value == '') {
-            value =  $('#' + name + ' h5').data('default');
+        if($('#' + name + ' h5').length) {
+            if(value == '') {
+                value =  $('#' + name + ' h5').data('default');
+            }
+
+            $('#' + name + ' h5').html(value);
+        }
+        if($('#' + name + ' .star a').length) {
+            $('#' + name + ' .star a').data('name', value);
         }
 
-        $('#' + name + ' h5').html(value);
-
-        $('#' + name + ' .star a').data('name', value);
+        if($('h2#' + name).length) {
+            $('h2#' + name).html(value + "<span>" + $('h2#' + name + ' span').html() + "</span>");
+            $('h2#' + name).data('value', value);
+        }
 
         $('#category-preference-form').modal('hide');
         return false;

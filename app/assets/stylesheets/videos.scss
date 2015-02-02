@@ -1,10 +1,10 @@
 @import "./_variables";
 
 .none-found {
-  padding-left: 18px;
+  padding-left: 0;
 }
 div.average-rating {
-  padding-left: 18px;
+  padding-left: 0;
   position: relative;
   top: -15px;
   span {
@@ -55,7 +55,8 @@ div.average-rating {
 .search-form-container {
   height: 140px;
   margin: 0 auto;
-  width: $main;
+  max-width: $main;
+  width: 100%;
   padding-top: 30px;
   padding-bottom: 60px;
 
@@ -71,9 +72,6 @@ div.average-rating {
 
 .add-vids-container {
   clear: both;
-  width: $main;
-  margin: 0 auto;
-  margin-left: -20px;
   padding-bottom: 60px;
 
   div.index-caption {
@@ -104,10 +102,9 @@ div.average-rating {
   }
 
   li div.images {
-    margin: 18px;
+    margin: 18px 0;
     width: 210px;
     height: 150px;
-    margin-right: 0;
     overflow: hidden;
     position: relative;
 
@@ -126,39 +123,41 @@ div.average-rating {
         text-decoration: none;
       }
       img {
-        top: -35px;
+        top: -50%;
         position: relative;
-        left: -35px;
+        width: 130%;
+        left: -15%;
+        background-size: auto 100%;
       }
   }
 
   ul {
-    width: $main;
+    width: 100%;
     margin-left: 0;
   }
 }
 
-.search {
-  margin-left: -15px;
-  padding: 0 !important;
+#search-form {
+  margin: 0;
+  padding: 0;
 }
 
 .facebook-comments {
-  width: 900px;
-  margin: 0 auto;
+
 }
 
 .vid-link {
   overflow: hidden;
   position: relative;
   float: left;
+  width: 100%;
   #player {
     z-index: 1;
     position: relative;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     border: 0;
-    float: left;
+    display: block;
   }
   .finished-popup {
     display: none;
@@ -168,7 +167,7 @@ div.average-rating {
     float: left;
 
     form {
-      padding: 20px;
+      padding: 20px 20px 40px 20px;
       input {
         width: 100%;
       }
@@ -185,6 +184,11 @@ div.average-rating {
     }
   }
 
+}
+
+.pagination {
+  float: left;
+  margin-left: 0;
 }
 
 .modal-header p {

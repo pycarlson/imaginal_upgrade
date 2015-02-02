@@ -1,4 +1,4 @@
-<div class="navbar">
+<!--<div class="navbar">
   <div class="inner-nav">
     <ul>
       <li class="nav-left logo"><%= link_to image_tag("logo.png"), root_path %></li>
@@ -19,6 +19,46 @@
       <% end %>
     </ul>
  </div>
-</div>
+</div>-->
+
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <%= link_to image_tag("logo.png"), root_path, class: "navbar-brand" %>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse pull-right">
+            <ul class="nav navbar-nav">
+
+
+                <li class="nav-right"><%= link_to "ALL VIDEOS", videos_path %></li>
+
+
+                <% if user_signed_in? %>
+
+                  <li class="nav-right"><%= link_to "MY VIDEOS", profile_path(current_user.profile) %></li>
+                  <li class="nav-right"><%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %></li>
+                  <li class="nav-right thumb"><a href="http://facebook.com/<%=current_user.uid %>"><img alt="Signed in as <%=current_user.name %>" title="Signed in as <%=current_user.name %>" src="https://graph.facebook.com/<%= current_user.uid %>/picture?type=square" /></a></li>
+
+                  <% if current_user && current_user.is_admin? %>
+                    <li class="nav-right"><%= link_to "ADMIN", '/admin' %></li>
+                  <% end %>
+
+                <% else %>
+
+                  <li class="nav-right"><%= link_to "SIGN IN WITH FACEBOOK", user_omniauth_authorize_path(:facebook) %></li>
+
+                <% end %>
+
+                <li class="to-sub-vid-modal"><a href="#submit-video"></a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
 
 

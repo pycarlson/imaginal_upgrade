@@ -24,3 +24,163 @@
        url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
+@media screen and (max-width: 1120px) {
+    .carousel-footer, .carousel.slide {
+        width: 800px;
+    }
+    ul.thumbnails {
+        width: 870px;
+    }
+    ul.thumbnails li {
+        width: 202px;
+        position: relative;
+        padding-right: 4px;
+    }
+
+    .carousel div.thumbnail img {
+        top: -40px;
+        width: 120%;
+        left: -10%;
+        max-width: 200%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    .container {
+
+    }
+    .carousel-footer, .carousel.slide {
+        width: 700px;
+    }
+    ul.thumbnails {
+        width: 770px;
+    }
+    ul.thumbnails li {
+        width: 172px;
+    }
+
+    .feature-home-container, .feature-home-container .vid-link,  .feature-home-container iframe {
+        width: 100%;
+    }
+    .carousel div.thumbnail img {
+        top: -40px;
+        width: 140%;
+        left: -20%;
+    }
+
+    .navbar .navbar-nav > li > a {
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+
+    .description {
+        width: 100%;
+    }
+    .full-share {
+        float: none;
+        width: 100%;
+        padding: 20px 0;
+        clear: both;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        width: auto;
+    }
+    .carousel-footer, .carousel.slide {
+        width: 600px;
+    }
+    ul.thumbnails {
+        width: 670px;
+    }
+    ul.thumbnails li {
+        width: 150px;
+    }
+
+    .carousel div.thumbnail img {
+        top: -40px;
+        width: 160%;
+        left: -30%;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+
+    .carousel-footer, .carousel.slide {
+        width: 100%;
+        padding: 0;
+    }
+
+    .carousel-control, .carousel-inner {
+        display: none;
+    }
+
+    ul.thumbnails {
+        width: auto;
+        height: auto;
+    }
+    .carousel-mobile {
+        display: block;
+    }
+    .carousel.slide li {
+        height: 135px;
+        overflow: hidden;
+    }
+
+    .add-stars-box {
+        width: 100%;
+    }
+
+    .add-stars-box .cat {
+        width: 300px;
+        float: none;
+    }
+
+    .add-stars-box h5 {
+        font-size: 14px;
+        width: 150px;
+    }
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .navbar-brand {
+        left: 15px;
+        position: relative;
+    }
+    .modal.fade .modal-dialog {
+        margin-top: 0;
+    }
+
+    .submit-vid-form .modal-content, .edit-vid-form .modal-content {
+        max-width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .carousel.slide li {
+        width: 134px;
+        height: 134px;
+        overflow: hidden;
+    }
+    .caption a {
+        font-size: 12px;
+    }
+
+    .add-stars-box .cat {
+        width: 280px;
+        float: none;
+    }
+
+
+    .add-stars-box h5 {
+        font-size: 10px;
+        width: 120px;
+    }
+}
