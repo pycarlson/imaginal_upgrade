@@ -16,8 +16,11 @@
                     <h2>DESCRIPTION</h2>
                     <h5>Tell us how this video impacted you and why it matters.</h5>
                     <%= f.text_area :description, :size => "81x4", :rows => 3, required: :true %>
-                    <h2>Share With Your Friends</h2>
-                    <label><%= f.check_box :post_to_facebook, checked: 'checked' %> Post this to my Facebook feed</label>
+
+                    <div style="display: none;">
+                      <h2>Share With Your Friends</h2>
+                      <label><%= f.check_box :post_to_facebook, checked: '' %> Post this to my Facebook feed</label>
+                    </div>
 
                     <br>
 
@@ -38,15 +41,15 @@
 
     <script type="text/javascript">
         $(document).ready(function(){
+            $('.cat h5').css('cursor', 'pointer');
             $('.cat h5').click(function() {
                 initCategoryPreferenceModal(this);
             });
-          $('.carousel h2').click(function() {
-            initCategoryPreferenceModal(this);
-          });
 
-
-
+            $('.carousel h2').css('cursor', 'pointer');
+            $('.carousel h2').click(function() {
+              initCategoryPreferenceModal(this);
+            });
         });
     </script>
 

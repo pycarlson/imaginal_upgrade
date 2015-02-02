@@ -2,7 +2,7 @@
   <div class="carousel slide" id="carousel_<%=id %>">
 
     <% if !category.nil? %>
-      <h2 id="category-<%=category.id.to_s %>" data-value="<%=title %>" data-id="category-<%=category.id.to_s %>" data-default="<%=category.name %>" data-alternates="<%=category.name %><% if category.alternates != '' %>, <%=category.alternates %><% end %>">
+      <h2 tooltip="<%= category.description %>" class="tooltip<%=id+1 %>" id="category-<%=category.id.to_s %>" data-value="<%=title %>" data-id="category-<%=category.id.to_s %>" data-default="<%=category.name %>" data-alternates="<%=category.name %><% if category.alternates != '' %>, <%=category.alternates %><% end %>">
           <%=title %><span><%=subtitle %></span></h2><br>
     <% else %>
         <h2><%=title %><span><%=subtitle %></span></h2><br>

@@ -21,7 +21,8 @@
   <%= csrf_meta_tags %>
 
 </head>
-<body>
+<body class="<%=controller_name %> <%=action_name %>">
+
   <% if @redirect %>
        <script type="text/javascript">
            location.href = '<%=@redirect %>';
